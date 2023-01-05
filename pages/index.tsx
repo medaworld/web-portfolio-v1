@@ -1,11 +1,9 @@
-import Head from 'next/head';
-import Image from 'next/image';
+import Hero from '../components/Desktop/Hero/Hero';
 import { Main } from '../styles';
-import MyLogo from '/public/favicon.png';
 export default function Home() {
   return (
     <Main>
-      <Image src={MyLogo.src} alt={'My Logo'} width={100} height={100} />
+      <Hero />
     </Main>
   );
 }
