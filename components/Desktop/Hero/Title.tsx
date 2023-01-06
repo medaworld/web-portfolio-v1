@@ -1,9 +1,15 @@
-import { TitleContainer } from '../../../styles/components/Desktop/Hero';
+import styled from 'styled-components';
+import {
+  Block,
+  TitleContainer,
+  TitleText,
+} from '../../../styles/components/Desktop/Hero';
 
 function Title() {
   return (
     <TitleContainer>
-      <h2>Web Developer</h2>
+      <Block />
+      <TitleText>Web Developer</TitleText>
     </TitleContainer>
   );
 }

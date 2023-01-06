@@ -1,13 +1,13 @@
-import { HeroContainer } from '../../../styles/components/Desktop/Hero';
-import Name from './Name';
-import Title from './Title';
+import { Container } from '../../../styles/components/Desktop/Hero';
+import About from './About';
+import Intro from './Intro';
 
 function Hero() {
   return (
-    <HeroContainer>
-      <Name />
-      <Title />
-    </HeroContainer>
+    <Container>
+      <Intro />
+      <About />
+    </Container>
   );
 }
 
