@@ -13,4 +13,12 @@ declare module 'styled-components' {
   }
 }
 
+export type WorkData = {
+  order: number;
+  name: string;
+  description: string;
+  roles: string[];
+  images: { desktop: string; mobile: string };
+};
+
 export {};

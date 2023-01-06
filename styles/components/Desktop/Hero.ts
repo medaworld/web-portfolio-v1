@@ -106,7 +106,7 @@ export const AboutTitle = styled.div<{ scrollPercent: number }>`
   margin: 0 0 0 5%;
   font-size: 100px;
   opacity: 20%;
-  transform: ${(p) => 'translateX(' + p.scrollPercent * 0.6 + '%)'};
+  transform: ${(p) => 'translateX(' + p.scrollPercent * 0.4 + '%)'};
 `;
 
 export const AboutText = styled.div`

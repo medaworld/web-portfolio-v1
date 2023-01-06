@@ -10,7 +10,6 @@ function About() {
   useEffect(function mount() {
     function onScroll(event: any) {
       const { body, documentElement } = event.srcElement;
-      console.log(body.scrollTop);
       const sd = Math.max(body.scrollTop, documentElement.scrollTop);
       const sp =
         (sd / (documentElement.scrollHeight - documentElement.clientHeight)) *
@@ -32,7 +31,7 @@ function About() {
       <AboutTitle scrollPercent={scrollPercent}>ABOUT</AboutTitle>
       <AboutText>
         Front-end web developer dedicated to building exceptional user
-        experiences. Former UCLA graduate with a creative background in design,
+        experiences. UCLA graduate with creative passion in design, technology,
         photography and music.
       </AboutText>
     </AboutContainer>
