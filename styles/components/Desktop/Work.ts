@@ -3,13 +3,14 @@ import styled from 'styled-components';
 export const Container = styled.div`
   display: flex;
   flex-flow: row nowrap;
-  /* align-items: center; */
+  overflow: hidden;
   flex-direction: column;
 `;
 
 export const WorkSummaryContainer = styled.div`
   display: flex;
-  height: 500px;
+  height: 100vh;
+  outline: 1px solid red;
   justify-content: space-evenly;
 `;
 

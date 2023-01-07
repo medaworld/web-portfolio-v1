@@ -4,6 +4,7 @@ export const Container = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  overflow: hidden;
 `;
 
 export const IntroContainer = styled.div`
@@ -96,17 +97,25 @@ export const Block = styled.div`
 
 export const AboutContainer = styled.div`
   width: 100%;
-  overflow: hidden;
-  margin-bottom: 30vh;
+  height: 100vh;
+  position: relative;
 `;
+
+export const AboutContent = styled.div<{ scrollPercent: number }>`
+  padding: 5% 0;
+  transform: ${(p) => 'translateY(' + p.scrollPercent * 0.2 + 'vh)'};
+  transition: transform 0.5s ease-out;
+`;
+
 export const AboutTitle = styled.div<{ scrollPercent: number }>`
   position: absolute;
-  font-family: Raleway;
+  font: 120px Catamaran;
+  line-height: 120px;
+  color: ${(p) => p.theme.colors.color};
+  opacity: 40%;
+  z-index: -1;
+  transform: ${(p) => 'translateX(' + p.scrollPercent + '%)'};
   transition: transform 0.5s ease-out;
-  margin: 0 0 0 5%;
-  font-size: 100px;
-  opacity: 20%;
-  transform: ${(p) => 'translateX(' + p.scrollPercent * 0.4 + '%)'};
 `;
 
 export const AboutText = styled.div`
@@ -114,4 +123,14 @@ export const AboutText = styled.div`
   text-align: left;
   margin: 10% 20% 0 10%;
   font-size: 30px;
+`;
+
+export const BackgroundBlock = styled.div<{ bgChange: boolean }>`
+  position: absolute;
+  bottom: 0;
+  background-color: ${(p) => p.theme.colors.primary};
+  width: 100vw;
+  height: ${(p) => (p.bgChange ? '100vh' : 0)};
+
+  transition: height 2s ease-out;
 `;

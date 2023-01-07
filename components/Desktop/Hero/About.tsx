@@ -3,37 +3,61 @@ import {
   AboutText,
   AboutTitle,
   AboutContainer,
+  BackgroundBlock,
+  AboutContent,
 } from '../../../styles/components/Desktop/Hero';
 
 function About() {
   const [scrollPercent, setScrollPercent] = useState(0);
+  const [bgChangePercent, setBgChangePercent] = useState(0);
+  const [bgChange, setBgChange] = useState(false);
   useEffect(function mount() {
     function onScroll(event: any) {
-      const { body, documentElement } = event.srcElement;
-      const sd = Math.max(body.scrollTop, documentElement.scrollTop);
-      const sp =
-        (sd / (documentElement.scrollHeight - documentElement.clientHeight)) *
-        100;
-      const maxlimit =
-        (documentElement.clientHeight * 150) / documentElement.scrollHeight;
-      if (sp >= 0 && sp <= maxlimit) {
-        setScrollPercent(sp);
+      const { documentElement } = event.srcElement;
+      const bgChangeStart = documentElement.clientHeight * 0.5;
+      const bgChangeEnd = documentElement.clientHeight - bgChangeStart;
+
+      if (documentElement.scrollTop <= documentElement.clientHeight) {
+        setScrollPercent(
+          (documentElement.scrollTop / documentElement.clientHeight) * 100
+        );
+      }
+
+      if (
+        documentElement.scrollTop >= bgChangeStart &&
+        documentElement.scrollTop <= documentElement.clientHeight
+      ) {
+        setBgChangePercent(
+          ((documentElement.scrollTop - bgChangeStart) / bgChangeEnd) * 100
+        );
+      }
+
+      if (documentElement.scrollTop >= documentElement.clientHeight * 0.95) {
+        setBgChange(true);
+      } else {
+        setBgChange(false);
       }
     }
+
     window.addEventListener('scroll', onScroll);
     return function unMount() {
       window.removeEventListener('scroll', onScroll);
     };
   });
 
+  console.log(bgChangePercent);
+
   return (
     <AboutContainer>
-      <AboutTitle scrollPercent={scrollPercent}>ABOUT</AboutTitle>
-      <AboutText>
-        Front-end web developer dedicated to building exceptional user
-        experiences. UCLA graduate with creative passion in design, technology,
-        photography and music.
-      </AboutText>
+      <AboutContent scrollPercent={bgChangePercent}>
+        <AboutTitle scrollPercent={scrollPercent - 30}>ABOUT</AboutTitle>
+        <AboutText>
+          Front-end web developer enthusiastic in building exceptional user
+          experiences. UCLA alumni with a passion in design, technology,
+          photography and music.
+        </AboutText>
+      </AboutContent>
+      <BackgroundBlock bgChange={bgChange} />
     </AboutContainer>
   );
 }

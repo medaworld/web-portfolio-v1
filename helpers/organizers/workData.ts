@@ -5,14 +5,21 @@ export const workData = [
   {
     order: 1,
     name: 'Blockchain.com Explorer',
-    description: 'Top used and trusted Bitcoin explorer.',
+    description: 'One of the most trusted and used Bitcoin explorers.',
     roles: ['Front-end Developer'],
     images: { desktop: BlockchainDesktop.src, mobile: BlockchainMobile.src },
   },
   {
     order: 2,
     name: 'MEDA Photo Gallery',
-    description: '',
+    description: 'Cool Photos!',
+    roles: ['Full Stack Developer', 'UI Designer'],
+    images: { desktop: BlockchainDesktop.src, mobile: BlockchainMobile.src },
+  },
+  {
+    order: 3,
+    name: 'MEDA Music Gallery',
+    description: 'Cool Music Project',
     roles: ['Full Stack Developer', 'UI Designer'],
     images: { desktop: BlockchainDesktop.src, mobile: BlockchainMobile.src },
   },

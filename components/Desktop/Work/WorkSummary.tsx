@@ -3,7 +3,13 @@ import { WorkSummaryContainer } from '../../../styles/components/Desktop/Work';
 import SummaryImages from './SummaryImages';
 import SummaryText from './SummaryText';
 
-function WorkSummary({ workData }: { workData: WorkData }) {
+function WorkSummary({
+  workData,
+  scrollPercent,
+}: {
+  workData: WorkData;
+  scrollPercent: number;
+}) {
   return (
     <WorkSummaryContainer>
       <SummaryText workData={workData} />

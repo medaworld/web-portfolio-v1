@@ -20,7 +20,7 @@ class MyDocument extends Document {
         styles: (
           <Html>
             <link
-              href="https://fonts.googleapis.com/css2?family=Inter&family=Nunito&family=Karla&family=Raleway&display=swap"
+              href="https://fonts.googleapis.com/css2?family=Inter&family=Nunito&family=Karla&family=Raleway&family=Catamaran:wght@900&display=swap"
               rel="stylesheet"
             />
             <body>
