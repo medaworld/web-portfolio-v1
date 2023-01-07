@@ -12,8 +12,8 @@ function WorkSummary({
 }) {
   return (
     <WorkSummaryContainer>
-      <SummaryText workData={workData} />
-      <SummaryImages images={workData.images} />
+      {/* <SummaryText workData={workData} />
+      <SummaryImages images={workData.images} /> */}
     </WorkSummaryContainer>
   );
 }

@@ -101,20 +101,30 @@ export const AboutContainer = styled.div`
   position: relative;
 `;
 
-export const AboutContent = styled.div<{ scrollPercent: number }>`
+export const AboutContent = styled.div.attrs<{ contentFollowPercent: number }>(
+  ({ contentFollowPercent }) => ({
+    style: {
+      transform: 'translateY(' + contentFollowPercent * 0.2 + 'vh)',
+    },
+  })
+)`
   padding: 5% 0;
-  transform: ${(p) => 'translateY(' + p.scrollPercent * 0.2 + 'vh)'};
   transition: transform 0.5s ease-out;
 `;
 
-export const AboutTitle = styled.div<{ scrollPercent: number }>`
+export const AboutTitle = styled.div.attrs<{ scrollPercent: number }>(
+  ({ scrollPercent }) => ({
+    style: {
+      transform: 'translateX(' + scrollPercent + '%)',
+    },
+  })
+)`
   position: absolute;
   font: 120px Catamaran;
   line-height: 120px;
   color: ${(p) => p.theme.colors.color};
   opacity: 40%;
   z-index: -1;
-  transform: ${(p) => 'translateX(' + p.scrollPercent + '%)'};
   transition: transform 0.5s ease-out;
 `;
 
@@ -130,7 +140,7 @@ export const BackgroundBlock = styled.div<{ bgChange: boolean }>`
   bottom: 0;
   background-color: ${(p) => p.theme.colors.primary};
   width: 100vw;
+  outline: 10px solid ${(p) => p.theme.colors.primary};
   height: ${(p) => (p.bgChange ? '100vh' : 0)};
-
   transition: height 2s ease-out;
 `;

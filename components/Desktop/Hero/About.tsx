@@ -9,7 +9,7 @@ import {
 
 function About() {
   const [scrollPercent, setScrollPercent] = useState(0);
-  const [bgChangePercent, setBgChangePercent] = useState(0);
+  const [contentFollowPercent, setContentFollowPercent] = useState(0);
   const [bgChange, setBgChange] = useState(false);
   useEffect(function mount() {
     function onScroll(event: any) {
@@ -17,7 +17,7 @@ function About() {
       const bgChangeStart = documentElement.clientHeight * 0.5;
       const bgChangeEnd = documentElement.clientHeight - bgChangeStart;
 
-      if (documentElement.scrollTop <= documentElement.clientHeight) {
+      if (documentElement.scrollTop <= documentElement.clientHeight + 130) {
         setScrollPercent(
           (documentElement.scrollTop / documentElement.clientHeight) * 100
         );
@@ -27,7 +27,7 @@ function About() {
         documentElement.scrollTop >= bgChangeStart &&
         documentElement.scrollTop <= documentElement.clientHeight
       ) {
-        setBgChangePercent(
+        setContentFollowPercent(
           ((documentElement.scrollTop - bgChangeStart) / bgChangeEnd) * 100
         );
       }
@@ -45,11 +45,9 @@ function About() {
     };
   });
 
-  console.log(bgChangePercent);
-
   return (
     <AboutContainer>
-      <AboutContent scrollPercent={bgChangePercent}>
+      <AboutContent contentFollowPercent={contentFollowPercent}>
         <AboutTitle scrollPercent={scrollPercent - 30}>ABOUT</AboutTitle>
         <AboutText>
           Front-end web developer enthusiastic in building exceptional user
