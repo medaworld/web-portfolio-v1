@@ -19,7 +19,7 @@ export const workData = [
   },
   {
     order: 3,
-    name: 'MEDA Music Gallery',
+    name: 'MEDA Music Website',
     description: 'Music artist website with a built in media player.',
     roles: ['Full Stack Developer', 'UI Designer'],
     images: { desktop: BlockchainDesktop.src, mobile: BlockchainMobile.src },

@@ -1,45 +1,65 @@
 import { useEffect, useState } from 'react';
 import {
   Container,
+  Design,
+  Frameworks,
+  Languages,
   Skill,
-  SkillsLeft,
-  SkillsRight,
+  SkillsContainer,
   SkillsTitle,
+  Tools,
 } from '../../../styles/components/Desktop/Skills';
 
 function Skills() {
   const [showTitle, setShowTitle] = useState(false);
-  const skills = [
-    'JavaScript',
-    'CSS',
-    'HTML',
-    'TypeScript',
-    'React',
-    'Redux',
-    'Next.js',
-    'Node.js',
-    'Express',
-    'MongoDB',
-    'Git & Github',
-    'Styled-Component',
-    'SQL',
-  ];
-  const skillsFirst = skills.slice(0, skills.length / 2);
-  const skillsLast = skills.slice(skills.length / 2, skills.length);
+  const [showLanguages, setShowLanguages] = useState(false);
+  const [showFrameworks, setShowFrameworks] = useState(false);
+  const [showTools, setShowTools] = useState(false);
+  const [showDesign, setShowDesign] = useState(false);
+
+  const languages = ['JavaScript', 'TypeScript', 'HTML', 'CSS', 'SQL'];
+  const frameworks = ['React & Redux', 'Next.js', 'Node.js', 'Express'];
+  const tools = ['MongoDB', 'Git & Github', 'Postman', 'Firebase'];
+  const design = ['Affinity Designer', 'Affinity Publisher', 'Affinity Photo'];
 
   useEffect(function mount() {
     function onScroll(event: any) {
       const { documentElement } = event.srcElement;
-      const bgChangeStart = documentElement.clientHeight * 4;
-      const bgChangeEnd = documentElement.clientHeight - bgChangeStart;
-      console.log(documentElement.scrollTop, bgChangeStart);
 
-      if (documentElement.scrollTop >= documentElement.clientHeight * 4) {
+      const scroll =
+        ((documentElement.scrollTop - documentElement.clientHeight * 4) /
+          documentElement.clientHeight) *
+        100;
+
+      if (scroll > 0) {
         setShowTitle(true);
       } else {
         setShowTitle(false);
       }
-      console.log(showTitle);
+
+      if (scroll > 15) {
+        setShowLanguages(true);
+      } else {
+        setShowLanguages(false);
+      }
+
+      if (scroll > 30) {
+        setShowFrameworks(true);
+      } else {
+        setShowFrameworks(false);
+      }
+
+      if (scroll > 50) {
+        setShowTools(true);
+      } else {
+        setShowTools(false);
+      }
+
+      if (scroll > 67) {
+        setShowDesign(true);
+      } else {
+        setShowDesign(false);
+      }
     }
 
     window.addEventListener('scroll', onScroll);
@@ -51,16 +71,28 @@ function Skills() {
   return (
     <Container>
       <SkillsTitle showTitle={showTitle}>SKILLS</SkillsTitle>
-      <SkillsLeft>
-        {skillsFirst.map((skill, key) => {
-          return <Skill key={key}>{skill}</Skill>;
-        })}
-      </SkillsLeft>
-      <SkillsRight>
-        {skillsLast.map((skill, key) => {
-          return <Skill key={key}>{skill}</Skill>;
-        })}
-      </SkillsRight>
+      <SkillsContainer>
+        <Languages aria-label="LANGUAGES" showLanguages={showLanguages}>
+          {languages.map((skill, key) => {
+            return <Skill key={key}>{skill}</Skill>;
+          })}
+        </Languages>
+        <Frameworks aria-label="FRAMEWORKS" showFrameworks={showFrameworks}>
+          {frameworks.map((skill, key) => {
+            return <Skill key={key}>{skill}</Skill>;
+          })}
+        </Frameworks>
+        <Tools aria-label="TOOLS" showTools={showTools}>
+          {tools.map((skill, key) => {
+            return <Skill key={key}>{skill}</Skill>;
+          })}
+        </Tools>
+        <Design aria-label="DESIGN" showDesign={showDesign}>
+          {design.map((skill, key) => {
+            return <Skill key={key}>{skill}</Skill>;
+          })}
+        </Design>
+      </SkillsContainer>
     </Container>
   );
 }

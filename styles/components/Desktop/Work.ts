@@ -10,14 +10,14 @@ export const Container = styled.div`
 
 export const WorkTitle = styled.div<WorkTitleProps>`
   position: fixed;
-  font: 120px Catamaran;
+  font: 120px Cabin;
   line-height: 120px;
   color: ${(p) => p.theme.colors.success};
   top: ${(p) =>
     p.showTitle.in && !p.showTitle.out
       ? '10%'
       : p.showTitle.in && p.showTitle.out
-      ? '-10%'
+      ? '-40%'
       : '110%'};
   opacity: 40%;
   right: 5%;
@@ -38,7 +38,7 @@ export const TextContentContainer = styled.div`
 `;
 
 export const ProjectText = styled.div<{ fontSize: number }>`
-  font: ${(p) => p.fontSize + 'px Inter'};
+  font: ${(p) => p.fontSize + 'px Cabin'};
   transition: all 0.4s ease-out;
 
   span {

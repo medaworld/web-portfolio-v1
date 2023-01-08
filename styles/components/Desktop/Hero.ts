@@ -108,7 +108,7 @@ export const AboutContent = styled.div`
 
 export const AboutTitle = styled.div`
   position: absolute;
-  font: 120px Catamaran;
+  font: 120px Cabin;
   line-height: 120px;
   color: ${(p) => p.theme.colors.color};
   opacity: 40%;

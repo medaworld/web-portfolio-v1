@@ -1,3 +1,4 @@
+import Contact from '../components/Desktop/Contact/Contact';
 import Hero from '../components/Desktop/Hero/Hero';
 import Skills from '../components/Desktop/Skills/Skills';
 import Work from '../components/Desktop/Work/Work';
@@ -8,6 +9,7 @@ export default function Home() {
       <Hero />
       <Work />
       <Skills />
+      <Contact />
     </Main>
   );
 }
