@@ -11,28 +11,30 @@ import {
 function ImageContent({
   data,
   scrollPercent,
+  slideAmount,
 }: {
   data: WorkData;
   scrollPercent: number;
+  slideAmount: number;
 }) {
   let mobileScrollPercent = 0;
 
-  if (data.order == 1 && scrollPercent > 10 / 3) {
-    mobileScrollPercent = scrollPercent * 3;
-  } else if (data.order == 2 && scrollPercent > 110 / 3) {
-    mobileScrollPercent = scrollPercent * 1.25;
-  } else if (data.order == 3 && scrollPercent > 210 / 3) {
-    mobileScrollPercent = scrollPercent * 0.8;
+  if (data.order == 1 && scrollPercent > 10 / slideAmount) {
+    mobileScrollPercent = scrollPercent * slideAmount;
+  } else if (data.order == 2 && scrollPercent > 110 / slideAmount) {
+    mobileScrollPercent = scrollPercent * (slideAmount / 2);
+  } else if (data.order == 3 && scrollPercent > 210 / slideAmount) {
+    mobileScrollPercent = scrollPercent * (slideAmount / 3);
   }
 
   let desktopScrollPercent = 0;
 
-  if (data.order == 1 && scrollPercent > 50 / 3) {
-    desktopScrollPercent = scrollPercent * 4;
-  } else if (data.order == 2 && scrollPercent > 150 / 3) {
-    desktopScrollPercent = scrollPercent * 1.5;
-  } else if (data.order == 3 && scrollPercent > 250 / 3) {
-    desktopScrollPercent = scrollPercent * 0.9;
+  if (data.order == 1 && scrollPercent > 50 / slideAmount) {
+    desktopScrollPercent = scrollPercent * slideAmount;
+  } else if (data.order == 2 && scrollPercent > 150 / slideAmount) {
+    desktopScrollPercent = scrollPercent * (slideAmount / 2);
+  } else if (data.order == 3 && scrollPercent > 250 / slideAmount) {
+    desktopScrollPercent = scrollPercent * (slideAmount / 3);
   }
 
   return (
