@@ -1,119 +1,101 @@
 import styled from 'styled-components';
+import { WorkTitleProps } from '../../../helpers/organizers/types';
 
 export const Container = styled.div`
   display: flex;
   flex-flow: row nowrap;
-  overflow: hidden;
+  overflow-x: clip;
   flex-direction: column;
 `;
 
-export const WorkTitle = styled.div.attrs<{ scrollPercent: number }>(
-  ({ scrollPercent }) => ({
-    style: {
-      marginTop: -scrollPercent * 30 - 50 + 'px',
-    },
-  })
-)`
-  position: absolute;
+export const WorkTitle = styled.div<WorkTitleProps>`
+  position: fixed;
   font: 120px Catamaran;
   line-height: 120px;
   color: ${(p) => p.theme.colors.success};
+  top: ${(p) =>
+    p.showTitle.in && !p.showTitle.out
+      ? '10%'
+      : p.showTitle.in && p.showTitle.out
+      ? '-10%'
+      : '110%'};
   opacity: 40%;
   right: 5%;
   transition: all 0.5s ease-out;
 `;
 
-export const ProjectTitle = styled.div`
+export const TextContentContainer = styled.div`
   position: fixed;
-  font: 50px Inter;
-  color: ${(p) => p.theme.colors.background};
-  top: 25vh;
-  margin-left: 5%;
-  width: 500px;
-  transition: all 0.5s ease-out;
-`;
-
-export const ProjectDescription = styled.div`
-  position: fixed;
-  font: 30px Inter;
-  color: ${(p) => p.theme.colors.background};
-  top: calc(25vh + 150px);
-  margin-left: 5%;
-  width: 500px;
-  transition: all 0.5s ease-out;
-`;
-
-export const ProjectRoles = styled.div`
-  position: fixed;
-  font: 25px Inter;
-  color: ${(p) => p.theme.colors.background};
-  top: calc(25vh + 150px + 150px);
-  margin-left: 5%;
-  width: 500px;
-  transition: all 0.5s ease-out;
-`;
-
-export const WorkSummaryContainer = styled.div`
-  display: flex;
+  width: 45vw;
+  top: 0;
+  left: 0;
   height: 100vh;
-  background-color: ${(p) => p.theme.colors.primary};
-  color: ${(p) => p.theme.colors.background};
-  justify-content: space-evenly;
-`;
-
-export const SummaryTextContainer = styled.div`
+  padding-left: 5%;
   display: flex;
   flex-direction: column;
-  width: 50vh;
+  justify-content: space-evenly;
+  color: ${(p) => p.theme.colors.background};
 `;
 
-export const Title = styled.div`
-  font: 50px Inter;
-  margin-bottom: 40px;
-`;
+export const ProjectText = styled.div<{ fontSize: number }>`
+  font: ${(p) => p.fontSize + 'px Inter'};
+  transition: all 0.4s ease-out;
 
-export const Description = styled.div`
-  font-size: 30px;
-  margin-bottom: 15px;
-`;
+  span {
+    overflow: hidden;
+    background-color: ${(p) => p.theme.colors.darker};
+    animation: backgroundFade 0.5s ease-out, textFade 0.5s linear;
 
-export const Roles = styled.div`
-  font-size: 20px;
-`;
+    @keyframes backgroundFade {
+      from {
+        background-color: transparent;
+      }
+      50% {
+        background-color: transparent;
+      }
+      to {
+        background-color: black;
+      }
+    }
 
-export const Images = styled.div`
-  position: relative;
-  width: 50vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  &:hover {
-    opacity: 80%;
+    @keyframes textFade {
+      from {
+        color: transparent;
+      }
+      90% {
+        color: transparent;
+      }
+      to {
+        color: inherit;
+      }
+    }
   }
 `;
 
-export const ImageContainer = styled.div<{
-  width: number;
-  translateX: number;
-  translateY: number;
-}>`
-  position: absolute;
-  width: ${(p) => p.width + 'px'};
-  transform: ${(p) =>
-    'translateY(' +
-    p.translateY +
-    'px) ' +
-    'translateX(' +
-    p.translateX +
-    'px)'};
+export const SlideBackground = styled.div`
+  height: 100vh;
+  width: 100vw;
+  background-color: ${(p) => p.theme.colors.primary};
 `;
 
-export const ImageItem = styled.div<{ img: string }>`
-  background: center url(${(p: any) => p.img});
-  background-size: contain;
-  background-repeat: no-repeat;
-  padding-bottom: 50%;
+export const ImageContentContainer = styled.div`
+  height: 100vh;
+  width: 50%;
+  margin-left: 50%;
+  display: flex;
+`;
 
-  cursor: pointer;
+export const ImageContainer = styled.div`
+  height: 100vh;
+  position: relative;
+`;
+
+export const MobileImage = styled.img`
+  width: 400px;
+  transition: transform 0.5s ease-out;
+`;
+
+export const DesktopImage = styled.img`
+  width: 800px;
+  transition: transform 0.5s ease-out;
 `;

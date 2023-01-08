@@ -17,9 +17,9 @@ function About() {
       const bgChangeStart = documentElement.clientHeight * 0.5;
       const bgChangeEnd = documentElement.clientHeight - bgChangeStart;
 
-      if (documentElement.scrollTop <= documentElement.clientHeight + 130) {
+      if (documentElement.scrollTop <= documentElement.clientHeight + 100) {
         setScrollPercent(
-          (documentElement.scrollTop / documentElement.clientHeight) * 100
+          (documentElement.scrollTop / documentElement.clientHeight) * 250
         );
       }
 
@@ -32,7 +32,7 @@ function About() {
         );
       }
 
-      if (documentElement.scrollTop >= documentElement.clientHeight * 0.95) {
+      if (documentElement.scrollTop >= documentElement.clientHeight * 0.99) {
         setBgChange(true);
       } else {
         setBgChange(false);
@@ -47,8 +47,16 @@ function About() {
 
   return (
     <AboutContainer>
-      <AboutContent contentFollowPercent={contentFollowPercent}>
-        <AboutTitle scrollPercent={scrollPercent - 30}>ABOUT</AboutTitle>
+      <AboutContent
+        style={{
+          transform: 'translateY(' + contentFollowPercent * 0.2 + 'vh)',
+        }}
+      >
+        <AboutTitle
+          style={{ transform: 'translateX(' + (scrollPercent - 30) + '%)' }}
+        >
+          ABOUT
+        </AboutTitle>
         <AboutText>
           Front-end web developer enthusiastic in building exceptional user
           experiences. UCLA alumni with a passion in design, technology,

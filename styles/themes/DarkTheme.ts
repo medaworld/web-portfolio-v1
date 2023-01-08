@@ -5,6 +5,7 @@ export const DarkTheme: DefaultTheme = {
     id: 'dark',
     background: '#000',
     primary: '#FFF',
+    darker: '',
     hover: '#232323ff',
     color: '#638bb0',
     accent: '#273644',

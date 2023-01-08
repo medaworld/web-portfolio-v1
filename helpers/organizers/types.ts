@@ -4,6 +4,7 @@ declare module 'styled-components' {
       id: string;
       background: string;
       primary: string;
+      darker: string;
       hover: string;
       color: string;
       accent: string;
@@ -21,4 +22,12 @@ export type WorkData = {
   images: { desktop: string; mobile: string };
 };
 
-export {};
+export type WorkTitleProps = {
+  showTitle: { in: boolean; out: boolean };
+};
+
+export type ProjectProps = {
+  name: string;
+  description: string;
+  roles: string[];
+};

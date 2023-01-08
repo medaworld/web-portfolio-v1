@@ -1,23 +1,29 @@
+import { Fragment, useCallback, useEffect, useState } from 'react';
+import { ProjectProps } from '../../../helpers/organizers/types';
 import {
-  ProjectDescription,
-  ProjectRoles,
-  ProjectTitle,
+  ProjectText,
+  TextContentContainer,
 } from '../../../styles/components/Desktop/Work';
-
-function TextContent({
-  project,
-}: {
-  project: { name: string; description: string; roles: string[] };
-}) {
+function TextContent({ project }: { project: ProjectProps }) {
   const roles = project.roles.map((role: string, key) => {
-    return <p key={key}>{role}</p>;
+    return (
+      <Fragment key={key}>
+        <span>{role}</span>
+        <br />
+      </Fragment>
+    );
   });
+
   return (
-    <>
-      <ProjectTitle>{project.name}</ProjectTitle>
-      <ProjectDescription>{project.description}</ProjectDescription>
-      <ProjectRoles>{roles}</ProjectRoles>
-    </>
+    <TextContentContainer>
+      <ProjectText fontSize={50}>
+        <span>{project.name}</span>
+      </ProjectText>
+      <ProjectText fontSize={30}>
+        <span>{project.description}</span>
+      </ProjectText>
+      <ProjectText fontSize={25}>{roles}</ProjectText>
+    </TextContentContainer>
   );
 }
 export default TextContent;

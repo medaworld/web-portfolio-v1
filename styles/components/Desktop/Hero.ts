@@ -101,24 +101,12 @@ export const AboutContainer = styled.div`
   position: relative;
 `;
 
-export const AboutContent = styled.div.attrs<{ contentFollowPercent: number }>(
-  ({ contentFollowPercent }) => ({
-    style: {
-      transform: 'translateY(' + contentFollowPercent * 0.2 + 'vh)',
-    },
-  })
-)`
+export const AboutContent = styled.div`
   padding: 5% 0;
   transition: transform 0.5s ease-out;
 `;
 
-export const AboutTitle = styled.div.attrs<{ scrollPercent: number }>(
-  ({ scrollPercent }) => ({
-    style: {
-      transform: 'translateX(' + scrollPercent + '%)',
-    },
-  })
-)`
+export const AboutTitle = styled.div`
   position: absolute;
   font: 120px Catamaran;
   line-height: 120px;
@@ -142,5 +130,5 @@ export const BackgroundBlock = styled.div<{ bgChange: boolean }>`
   width: 100vw;
   outline: 10px solid ${(p) => p.theme.colors.primary};
   height: ${(p) => (p.bgChange ? '100vh' : 0)};
-  transition: height 2s ease-out;
+  transition: height 0.5s ease-in-out;
 `;

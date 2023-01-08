@@ -12,14 +12,15 @@ export const workData = [
   {
     order: 2,
     name: 'MEDA Photo Gallery',
-    description: 'Cool Photos!',
+    description:
+      'Photo portfolio website that allows admin to upload and store images onto Firebase.',
     roles: ['Full Stack Developer', 'UI Designer'],
     images: { desktop: BlockchainDesktop.src, mobile: BlockchainMobile.src },
   },
   {
     order: 3,
     name: 'MEDA Music Gallery',
-    description: 'Cool Music Project',
+    description: 'Music artist website with a built in media player.',
     roles: ['Full Stack Developer', 'UI Designer'],
     images: { desktop: BlockchainDesktop.src, mobile: BlockchainMobile.src },
   },
