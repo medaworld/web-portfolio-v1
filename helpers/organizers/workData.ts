@@ -11,9 +11,9 @@ export const workData = [
   },
   {
     order: 2,
-    name: 'MEDA Photo Gallery',
+    name: 'Photography Portfolio',
     description:
-      'Photo portfolio website that allows admin to upload and store images onto Firebase.',
+      'Photo portfolio website that allows admin to upload and store images onto a database (Firebase).',
     roles: ['Full Stack Developer', 'UI Designer'],
     images: { desktop: BlockchainDesktop.src, mobile: BlockchainMobile.src },
   },
