@@ -5,7 +5,7 @@ import {
   ImageContainer,
   ImageContentContainer,
   MobileImage,
-  SlideBackground,
+  Slide,
 } from '../../../styles/components/Desktop/Work';
 
 function ImageContent({
@@ -38,7 +38,7 @@ function ImageContent({
   }
 
   return (
-    <SlideBackground>
+    <Slide>
       <ImageContentContainer>
         <ImageContainer>
           <MobileImage
@@ -55,7 +55,7 @@ function ImageContent({
           />
         </ImageContainer>
       </ImageContentContainer>
-    </SlideBackground>
+    </Slide>
   );
 }
 export default ImageContent;

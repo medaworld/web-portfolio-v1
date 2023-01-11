@@ -6,6 +6,8 @@ export const Container = styled.div`
   flex-flow: row nowrap;
   overflow-x: clip;
   flex-direction: column;
+  outline: 1px solid ${(p) => p.theme.colors.primary};
+  background-color: ${(p) => p.theme.colors.primary};
 `;
 
 export const WorkTitle = styled.div<WorkTitleProps>`
@@ -72,10 +74,9 @@ export const ProjectText = styled.div<{ fontSize: number }>`
   }
 `;
 
-export const SlideBackground = styled.div`
+export const Slide = styled.div`
   height: 100vh;
   width: 100vw;
-  background-color: ${(p) => p.theme.colors.primary};
 `;
 
 export const ImageContentContainer = styled.div`
