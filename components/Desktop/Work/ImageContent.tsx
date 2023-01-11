@@ -29,9 +29,9 @@ function ImageContent({
 
   let desktopScrollPercent = 0;
 
-  if (data.order == 1 && scrollPercent > 50 / slideAmount) {
+  if (data.order == 1 && scrollPercent > 40 / slideAmount) {
     desktopScrollPercent = scrollPercent * slideAmount;
-  } else if (data.order == 2 && scrollPercent > 150 / slideAmount) {
+  } else if (data.order == 2 && scrollPercent > 130 / slideAmount) {
     desktopScrollPercent = scrollPercent * (slideAmount / 2);
   } else if (data.order == 3 && scrollPercent > 250 / slideAmount) {
     desktopScrollPercent = scrollPercent * (slideAmount / 3);

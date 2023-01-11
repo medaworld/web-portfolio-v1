@@ -19,7 +19,7 @@ function Contact() {
       const { documentElement } = event.srcElement;
 
       const scroll =
-        ((documentElement.scrollTop - documentElement.clientHeight * 5) /
+        ((documentElement.scrollTop - documentElement.clientHeight * 4) /
           documentElement.clientHeight) *
         100;
 

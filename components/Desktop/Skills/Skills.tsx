@@ -27,7 +27,7 @@ function Skills() {
       const { documentElement } = event.srcElement;
 
       const scroll =
-        ((documentElement.scrollTop - documentElement.clientHeight * 4) /
+        ((documentElement.scrollTop - documentElement.clientHeight * 3) /
           documentElement.clientHeight) *
         100;
 
