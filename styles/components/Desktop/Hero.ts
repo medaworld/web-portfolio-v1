@@ -122,13 +122,3 @@ export const AboutText = styled.div`
   margin: 10% 20% 0 10%;
   font-size: 30px;
 `;
-
-export const BackgroundBlock = styled.div<{ bgChange: boolean }>`
-  position: absolute;
-  bottom: 0;
-  background-color: ${(p) => p.theme.colors.primary};
-  width: 100vw;
-  outline: 10px solid ${(p) => p.theme.colors.primary};
-  height: ${(p) => (p.bgChange ? '100vh' : 0)};
-  transition: height 0.5s ease-in-out;
-`;

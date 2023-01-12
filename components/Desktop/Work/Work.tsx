@@ -1,6 +1,10 @@
 import { useEffect, useState } from 'react';
 import { workData } from '../../../helpers/organizers/workData';
-import { Container, WorkTitle } from '../../../styles/components/Desktop/Work';
+import {
+  Container,
+  WorkTitle,
+  BackgroundBlock,
+} from '../../../styles/components/Desktop/Work';
 import ImageContent from './ImageContent';
 import TextContent from './TextContent';
 
@@ -11,6 +15,9 @@ function Work() {
   const [slideTop, setSlideTop] = useState(0);
   const [showTitle, setShowTitle] = useState({ in: false, out: false });
   const [showText, setShowText] = useState(false);
+  const [bgChange, setBgChange] = useState(false);
+  const [clientHeight, setClientHeight] = useState(0);
+  const [scrollTop, setScrollTop] = useState(0);
 
   const [project, setProject] = useState({
     name: '',
@@ -25,6 +32,21 @@ function Work() {
       const workSectionStart = documentElement.clientHeight * 1;
       const workSectionHeight =
         workSectionStart + documentElement.clientHeight * workData.length;
+      setClientHeight(documentElement.clientHeight);
+      setScrollTop(documentElement.scrollTop);
+
+      // Slide 1
+      if (
+        documentElement.scrollTop >= documentElement.clientHeight &&
+        documentElement.scrollTop <= documentElement.clientHeight * 2
+      ) {
+        console.log('hello');
+        // setContentFollowPercent(
+        //   ((documentElement.scrollTop - documentElement.clientHeight / 2) / // Represents when percentage begings
+        //     (documentElement.clientHeight / 2)) * // Ends half a window down
+        //     100
+        // );
+      }
 
       for (let i = 0; i <= workData.length; i++) {
         if (
@@ -72,6 +94,12 @@ function Work() {
         });
       }
 
+      if (documentElement.scrollTop >= documentElement.clientHeight * 0.99) {
+        setBgChange(true);
+      } else {
+        setBgChange(false);
+      }
+
       if (totalScroll > 0 && totalScroll < 20 / workData.length) {
         setShowTitle({ in: true, out: false });
       } else if (totalScroll > 0 && totalScroll > 20 / workData.length) {
@@ -80,13 +108,19 @@ function Work() {
         setShowTitle({ in: false, out: false });
       }
     }
+
     window.addEventListener('scroll', onScroll);
     return function unMount() {
       window.removeEventListener('scroll', onScroll);
     };
   });
+  // console.log(workData);
 
   const imageContent = workData.map((work, key) => {
+    const sectionStart = clientHeight + key * clientHeight;
+    const sectionEnd = 2 * clientHeight + key * clientHeight;
+    // console.log(sectionStart, scrollPoint, sectionEnd);
+
     return (
       <ImageContent
         key={key}
@@ -99,6 +133,7 @@ function Work() {
 
   return (
     <Container>
+      <BackgroundBlock bgChange={bgChange} />
       <WorkTitle showTitle={showTitle}>WORK</WorkTitle>
       {showText && <TextContent project={project} />}
       {imageContent}

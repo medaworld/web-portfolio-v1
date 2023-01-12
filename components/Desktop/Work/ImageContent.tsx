@@ -19,7 +19,7 @@ function ImageContent({
 }) {
   let mobileScrollPercent = 0;
 
-  if (data.order == 1 && scrollPercent > 10 / slideAmount) {
+  if (data.order == 1 && scrollPercent > 0) {
     mobileScrollPercent = scrollPercent * slideAmount;
   } else if (data.order == 2 && scrollPercent > 110 / slideAmount) {
     mobileScrollPercent = scrollPercent * (slideAmount / 2);
@@ -29,7 +29,7 @@ function ImageContent({
 
   let desktopScrollPercent = 0;
 
-  if (data.order == 1 && scrollPercent > 40 / slideAmount) {
+  if (data.order == 1 && scrollPercent > 30 / slideAmount) {
     desktopScrollPercent = scrollPercent * slideAmount;
   } else if (data.order == 2 && scrollPercent > 130 / slideAmount) {
     desktopScrollPercent = scrollPercent * (slideAmount / 2);

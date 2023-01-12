@@ -2,11 +2,11 @@ import styled from 'styled-components';
 import { WorkTitleProps } from '../../../helpers/organizers/types';
 
 export const Container = styled.div`
+  position: relative;
   display: flex;
   flex-flow: row nowrap;
   overflow-x: clip;
   flex-direction: column;
-  outline: 1px solid ${(p) => p.theme.colors.primary};
   background-color: ${(p) => p.theme.colors.primary};
 `;
 
@@ -86,17 +86,26 @@ export const ImageContentContainer = styled.div`
   display: flex;
 `;
 
-export const ImageContainer = styled.div`
-  height: 100vh;
-  position: relative;
-`;
+export const ImageContainer = styled.div``;
 
 export const MobileImage = styled.img`
-  width: 400px;
+  width: 50%;
   transition: transform 0.5s ease-out;
 `;
 
 export const DesktopImage = styled.img`
-  width: 800px;
+  width: 130%;
+  /* margin-left: -10%; */
   transition: transform 0.5s ease-out;
+`;
+
+export const BackgroundBlock = styled.div<{ bgChange: boolean }>`
+  position: absolute;
+  top: 0;
+  background-color: ${(p) => p.theme.colors.primary};
+  width: 100vw;
+  height: 101vh;
+  z-index: 0;
+  transform: ${(p) => (p.bgChange ? 'translateY(-100vh)' : '')};
+  transition: transform 0.5s ease-in-out;
 `;
