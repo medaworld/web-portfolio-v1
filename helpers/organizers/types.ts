@@ -20,6 +20,7 @@ export type WorkData = {
   description: string;
   roles: string[];
   images: { desktop: string; mobile: string };
+  links: { site: string | null; github: string | null };
 };
 
 export type WorkTitleProps = {

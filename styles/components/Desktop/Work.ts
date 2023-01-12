@@ -84,19 +84,40 @@ export const ImageContentContainer = styled.div`
   width: 50%;
   margin-left: 50%;
   display: flex;
+  position: relative;
 `;
 
-export const ImageContainer = styled.div``;
+export const ImageContainer = styled.div`
+  height: 50%;
+  transition: all 0.5s ease-out;
+  position: relative;
+  filter: brightness(110%);
+
+  :hover {
+    opacity: 70%;
+
+    div:first-child {
+      opacity: 100%;
+    }
+    img:nth-child(2) {
+      margin-left: -10%;
+    }
+    img:last-child {
+      margin-left: 90%;
+    }
+  }
+`;
 
 export const MobileImage = styled.img`
   width: 50%;
-  transition: transform 0.5s ease-out;
+  transition: all 0.7s ease-out;
+  margin-left: 50%;
 `;
 
 export const DesktopImage = styled.img`
   width: 130%;
-  /* margin-left: -10%; */
-  transition: transform 0.5s ease-out;
+  margin-bottom: -10%;
+  transition: all 0.5s ease-out;
 `;
 
 export const BackgroundBlock = styled.div<{ bgChange: boolean }>`
@@ -108,4 +129,30 @@ export const BackgroundBlock = styled.div<{ bgChange: boolean }>`
   z-index: 0;
   transform: ${(p) => (p.bgChange ? 'translateY(-100vh)' : '')};
   transition: transform 0.5s ease-in-out;
+`;
+
+export const ImageNavWindow = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  opacity: 0;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.7s ease-out;
+  z-index: 1;
+`;
+
+export const VisitButton = styled.div`
+  background-color: ${(p) => p.theme.colors.primary};
+  color: ${(p) => p.theme.colors.background};
+  border-radius: 10px;
+  padding: 10px 15px;
+  transition: transform 0.3s ease;
+  margin: 2px;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+  }
 `;

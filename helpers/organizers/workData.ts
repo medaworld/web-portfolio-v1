@@ -10,6 +10,7 @@ export const workData = [
     description: 'One of the most trusted and used Bitcoin explorers.',
     roles: ['Front-end Developer'],
     images: { desktop: BlockchainDesktop.src, mobile: BlockchainMobile.src },
+    links: { site: 'https://www.blockchain.com/explorer', github: null },
   },
   {
     order: 2,
@@ -18,6 +19,10 @@ export const workData = [
       'Photo portfolio website that allows admin to upload and store images onto a database storage (Firebase).',
     roles: ['Full Stack Developer', 'UI Designer'],
     images: { desktop: PhotoDesktop.src, mobile: PhotoMobile.src },
+    links: {
+      site: null,
+      github: 'https://github.com/medaworld/meda-photo-gallery',
+    },
   },
   // {
   //   order: 3,

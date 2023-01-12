@@ -1,56 +1,61 @@
 import Image from 'next/image';
+import { useState } from 'react';
 import { WorkData } from '../../../helpers/organizers/types';
 import {
   DesktopImage,
   ImageContainer,
   ImageContentContainer,
+  ImageNavWindow,
   MobileImage,
   Slide,
+  VisitButton,
 } from '../../../styles/components/Desktop/Work';
 
 function ImageContent({
   data,
-  scrollPercent,
-  slideAmount,
+  clientHeight,
+  scrollTop,
+  index,
 }: {
   data: WorkData;
-  scrollPercent: number;
-  slideAmount: number;
+  clientHeight: number;
+  scrollTop: number;
+  index: number;
 }) {
-  let mobileScrollPercent = 0;
+  const top = clientHeight * (1 + index);
+  const bottom = clientHeight * (2 + index);
 
-  if (data.order == 1 && scrollPercent > 0) {
-    mobileScrollPercent = scrollPercent * slideAmount;
-  } else if (data.order == 2 && scrollPercent > 110 / slideAmount) {
-    mobileScrollPercent = scrollPercent * (slideAmount / 2);
-  } else if (data.order == 3 && scrollPercent > 210 / slideAmount) {
-    mobileScrollPercent = scrollPercent * (slideAmount / 3);
+  let slidePercent: number = 0;
+
+  if (scrollTop >= top) {
+    slidePercent = ((scrollTop - top) / (bottom - top)) * 100;
   }
 
-  let desktopScrollPercent = 0;
-
-  if (data.order == 1 && scrollPercent > 30 / slideAmount) {
-    desktopScrollPercent = scrollPercent * slideAmount;
-  } else if (data.order == 2 && scrollPercent > 130 / slideAmount) {
-    desktopScrollPercent = scrollPercent * (slideAmount / 2);
-  } else if (data.order == 3 && scrollPercent > 250 / slideAmount) {
-    desktopScrollPercent = scrollPercent * (slideAmount / 3);
-  }
+  const openInNewTab = (url: string) => {
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <Slide>
       <ImageContentContainer>
         <ImageContainer>
+          <ImageNavWindow>
+            {data.links.site && (
+              <VisitButton onClick={() => openInNewTab(data.links.site!)}>
+                Visit Site
+              </VisitButton>
+            )}
+            {data.links.github && (
+              <VisitButton onClick={() => openInNewTab(data.links.github!)}>
+                Github
+              </VisitButton>
+            )}
+          </ImageNavWindow>
+          <DesktopImage src={data.images.desktop} />
           <MobileImage
             src={data.images.mobile}
             style={{
-              transform: 'translateY(' + -mobileScrollPercent + 'vh)',
-            }}
-          />
-          <DesktopImage
-            src={data.images.desktop}
-            style={{
-              transform: 'translateY(' + -desktopScrollPercent + 'vh)',
+              transform: 'translateY(' + -(slidePercent * 0.7) + 'vh)',
             }}
           />
         </ImageContainer>

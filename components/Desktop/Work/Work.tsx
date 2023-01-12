@@ -1,3 +1,4 @@
+import test from 'node:test';
 import { useEffect, useState } from 'react';
 import { workData } from '../../../helpers/organizers/workData';
 import {
@@ -26,6 +27,8 @@ function Work() {
     images: { desktop: '', mobile: '' },
   });
 
+  let test: { index: number; scroll: number };
+
   useEffect(function mount() {
     function onScroll(event: any) {
       const { documentElement } = event.srcElement;
@@ -34,19 +37,6 @@ function Work() {
         workSectionStart + documentElement.clientHeight * workData.length;
       setClientHeight(documentElement.clientHeight);
       setScrollTop(documentElement.scrollTop);
-
-      // Slide 1
-      if (
-        documentElement.scrollTop >= documentElement.clientHeight &&
-        documentElement.scrollTop <= documentElement.clientHeight * 2
-      ) {
-        console.log('hello');
-        // setContentFollowPercent(
-        //   ((documentElement.scrollTop - documentElement.clientHeight / 2) / // Represents when percentage begings
-        //     (documentElement.clientHeight / 2)) * // Ends half a window down
-        //     100
-        // );
-      }
 
       for (let i = 0; i <= workData.length; i++) {
         if (
@@ -114,19 +104,15 @@ function Work() {
       window.removeEventListener('scroll', onScroll);
     };
   });
-  // console.log(workData);
 
   const imageContent = workData.map((work, key) => {
-    const sectionStart = clientHeight + key * clientHeight;
-    const sectionEnd = 2 * clientHeight + key * clientHeight;
-    // console.log(sectionStart, scrollPoint, sectionEnd);
-
     return (
       <ImageContent
         key={key}
         data={work}
-        scrollPercent={totalScroll}
-        slideAmount={workData.length}
+        index={key}
+        clientHeight={clientHeight}
+        scrollTop={scrollTop}
       />
     );
   });
