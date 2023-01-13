@@ -79,7 +79,7 @@ function DesktopWork() {
       }
 
       // Setting project to display
-      if (slideNumber > 0 && documentElement.scrollTop) {
+      if (slideNumber > 0) {
         setProject(workData[slideNumber - 1]);
       } else {
         setProject({

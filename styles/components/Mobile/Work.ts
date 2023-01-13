@@ -26,12 +26,6 @@ export const WorkTitle = styled.div<WorkTitleProps>`
   right: 5%;
   transition: all 0.5s ease-out;
 
-  @media (${device.mobileS}) {
-    font-size: 96px;
-  }
-  @media (${device.tablet}) {
-    font-size: 120px;
-  }
   @media (${device.laptopL}) {
     font-size: 144px;
   }
@@ -45,7 +39,7 @@ export const BackgroundBlock = styled.div<{ bgChange: boolean }>`
   top: 0;
   background-color: ${(p) => p.theme.colors.primary};
   width: 100vw;
-  height: 200vh;
+  height: 101vh;
   z-index: 0;
   transform: ${(p) => (p.bgChange ? 'translateY(-100vh)' : '')};
   transition: transform 0.5s ease-in-out;
@@ -143,17 +137,11 @@ export const ImageContentContainer = styled.div`
   position: relative;
 `;
 
-export const ImageContainer = styled.div<{ slidePercent: number }>`
-  width: 100%;
-  height: 618px;
+export const ImageContainer = styled.div`
+  height: 50%;
   transition: all 0.5s ease-out;
   position: relative;
-  transform: ${(p) =>
-    p.slidePercent > 5 ? 'translateY(-50%)' : 'translateY(0)'};
   filter: brightness(110%);
-  @media (${device.desktop}) {
-    height: 870px;
-  }
 
   :hover {
     opacity: 70%;
@@ -165,39 +153,21 @@ export const ImageContainer = styled.div<{ slidePercent: number }>`
       margin-left: -10%;
     }
     img:last-child {
-      margin-left: 70%;
+      margin-left: 90%;
     }
   }
 `;
 
-export const DesktopImage = styled.img`
-  position: absolute;
-  width: 1024px;
-  object-fit: contain;
-  margin-bottom: -10%;
-  transition: all 0.5s ease-out;
-
-  @media (${device.laptopL}) {
-    width: 1228px;
-  }
-  @media (${device.desktop}) {
-    width: 1440px;
-  }
+export const MobileImage = styled.img`
+  width: 50%;
+  transition: all 0.7s ease-out;
+  margin-left: 50%;
 `;
 
-export const MobileImage = styled.img`
-  position: absolute;
-  width: 384px;
-  margin-left: 50%;
-  margin-top: 40vh;
-  transition: all 0.7s ease-out;
-
-  @media (${device.laptopL}) {
-    width: 460px;
-  }
-  @media (${device.desktop}) {
-    width: 512px;
-  }
+export const DesktopImage = styled.img`
+  width: 130%;
+  margin-bottom: -10%;
+  transition: all 0.5s ease-out;
 `;
 
 export const ImageNavWindow = styled.div`

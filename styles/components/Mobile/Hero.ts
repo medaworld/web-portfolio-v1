@@ -49,6 +49,14 @@ export const Logo = styled.img`
     }
   }
 
+  @media screen and (${device.mobileS}) {
+    width: 96px;
+  }
+
+  @media screen and (${device.tablet}) {
+    width: 120px;
+  }
+
   @media (${device.laptopL}) {
     width: 144px;
   }
@@ -72,6 +80,12 @@ export const FullName = styled.div`
     }
   }
 
+  @media (${device.mobileS}) {
+    font-size: 44px;
+  }
+  @media (${device.tablet}) {
+    font-size: 55px;
+  }
   @media (${device.laptopL}) {
     font-size: 66px;
   }
@@ -95,6 +109,12 @@ export const TitleText = styled.div`
     }
   }
 
+  @media (${device.mobileS}) {
+    font-size: 28px;
+  }
+  @media (${device.tablet}) {
+    font-size: 35px;
+  }
   @media (${device.laptopL}) {
     font-size: 42px;
   }
@@ -142,8 +162,13 @@ export const AboutTitle = styled.div`
   opacity: 40%;
   z-index: -1;
   transition: transform 0.5s ease-out;
-  font-size: 120px;
 
+  @media (${device.mobileS}) {
+    font-size: 96px;
+  }
+  @media (${device.tablet}) {
+    font-size: 120px;
+  }
   @media (${device.laptopL}) {
     font-size: 144px;
   }
@@ -153,11 +178,16 @@ export const AboutTitle = styled.div`
 `;
 
 export const AboutText = styled.div`
-  font-size: 30px;
   align-items: center;
   text-align: left;
   margin: 10% 20% 0 10%;
 
+  @media (${device.mobileS}) {
+    font-size: 24px;
+  }
+  @media (${device.tablet}) {
+    font-size: 30px;
+  }
   @media (${device.laptopL}) {
     font-size: 36px;
   }

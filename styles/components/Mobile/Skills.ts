@@ -21,9 +21,11 @@ export const SkillsTitle = styled.div<{ showTitle: boolean }>`
   transition-delay: 0.1s;
 
   @media (${device.laptopL}) {
+    //1.2
     font-size: 144px;
   }
   @media (${device.desktop}) {
+    //1.6
     font-size: 192px;
   }
 `;

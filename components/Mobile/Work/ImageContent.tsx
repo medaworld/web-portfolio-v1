@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { WorkData } from '../../../helpers/organizers/types';
 import {
   DesktopImage,
@@ -23,7 +22,6 @@ function ImageContent({
 }) {
   const top = clientHeight * (1 + index);
   const bottom = clientHeight * (2 + index);
-  const [imagesShift, setImagesShift] = useState(false);
 
   let slidePercent: number = 0;
 
@@ -38,7 +36,7 @@ function ImageContent({
   return (
     <Slide>
       <ImageContentContainer>
-        <ImageContainer slidePercent={slidePercent}>
+        <ImageContainer>
           <ImageNavWindow>
             {data.links.site && (
               <VisitButton onClick={() => openInNewTab(data.links.site!)}>
@@ -55,7 +53,7 @@ function ImageContent({
           <MobileImage
             src={data.images.mobile}
             style={{
-              transform: 'translateY(' + -slidePercent + 'vh)',
+              transform: 'translateY(' + -(slidePercent * 0.7) + 'vh)',
             }}
           />
         </ImageContainer>
