@@ -20,17 +20,11 @@ export const ContactTitle = styled.div<{ showTitle: boolean }>`
   z-index: -1;
   transition: transform 0.5s ease-out;
 
-  @media (${device.smallest}) {
-    font-size: 86px;
+  @media (${device.laptopL}) {
+    font-size: 144px;
   }
-  @media (${device.mobileS}) {
-    font-size: 90px;
-  }
-  @media (${device.mobileM}) {
-    font-size: 90px;
-  }
-  @media (${device.mobileL}) {
-    font-size: 100px;
+  @media (${device.desktop}) {
+    font-size: 192px;
   }
 `;
 
@@ -39,7 +33,6 @@ export const ContactIcons = styled.div`
   width: 100vw;
   display: flex;
   justify-content: center;
-  align-items: center;
 `;
 
 export const LogoWrapper = styled.div`
@@ -48,23 +41,15 @@ export const LogoWrapper = styled.div`
   width: 110px;
   justify-content: center;
   align-items: center;
-  margin: 0 5px;
+  margin-right: 15px;
 
-  @media (${device.smallest}) {
-    height: 50px;
-    width: 50px;
+  @media (${device.laptopL}) {
+    height: 132px;
+    width: 132px;
   }
-  @media (${device.mobileS}) {
-    height: 60px;
-    width: 60px;
-  }
-  @media (${device.mobileM}) {
-    height: 70px;
-    width: 70px;
-  }
-  @media (${device.mobileL}) {
-    height: 80px;
-    width: 80px;
+  @media (${device.desktop}) {
+    height: 176px;
+    width: 176px;
   }
 `;
 

@@ -143,7 +143,7 @@ export const ImageContainer = styled.div<{ slidePercent: number }>`
   transition: all 0.5s ease-out;
   position: relative;
   transform: ${(p) =>
-    p.slidePercent > 5 ? 'translateY(-50%)' : 'translateY(0)'};
+    p.slidePercent > 5 ? 'translateY(-40%)' : 'translateY(0)'};
   filter: brightness(110%);
   @media (${device.desktop}) {
     height: 870px;

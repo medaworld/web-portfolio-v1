@@ -1,4 +1,4 @@
-import { Logo, LogoWrapper } from '../../../styles/components/Desktop/Contact';
+import { Logo, LogoWrapper } from '../../../styles/components/Mobile/Contact';
 
 function ContactIcon({
   url,

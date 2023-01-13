@@ -3,7 +3,7 @@ import {
   ContactIcons,
   ContactTitle,
   Container,
-} from '../../../styles/components/Desktop/Contact';
+} from '../../../styles/components/Mobile/Contact';
 import ContactIcon from './ContactIcon';
 import githubIcon from '/public/icons/GithubIcon.png';
 import emailIcon from '/public/icons/MailIcon.png';
