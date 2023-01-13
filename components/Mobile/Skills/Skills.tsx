@@ -8,9 +8,9 @@ import {
   SkillsContainer,
   SkillsTitle,
   Tools,
-} from '../../../styles/components/Desktop/Skills';
+} from '../../../styles/components/Mobile/Skills';
 
-function DesktopSkills() {
+function MobileSkills() {
   const [showTitle, setShowTitle] = useState(false);
   const [showLanguages, setShowLanguages] = useState(false);
   const [showFrameworks, setShowFrameworks] = useState(false);
@@ -31,31 +31,32 @@ function DesktopSkills() {
           documentElement.clientHeight) *
         100;
 
-      if (scroll > 10) {
+      if (scroll > 80) {
         setShowTitle(true);
       } else {
         setShowTitle(false);
       }
+      console.log(scroll);
 
-      if (scroll > 25) {
+      if (scroll > 95) {
         setShowLanguages(true);
       } else {
         setShowLanguages(false);
       }
 
-      if (scroll > 40) {
+      if (scroll > 105) {
         setShowFrameworks(true);
       } else {
         setShowFrameworks(false);
       }
 
-      if (scroll > 60) {
+      if (scroll > 115) {
         setShowTools(true);
       } else {
         setShowTools(false);
       }
 
-      if (scroll > 77) {
+      if (scroll > 125) {
         setShowDesign(true);
       } else {
         setShowDesign(false);
@@ -97,4 +98,4 @@ function DesktopSkills() {
   );
 }
 
-export default DesktopSkills;
+export default MobileSkills;

@@ -1,22 +1,21 @@
-import test from 'node:test';
 import { useEffect, useState } from 'react';
 import { workData } from '../../../helpers/organizers/workData';
 import {
   Container,
   WorkTitle,
   BackgroundBlock,
-} from '../../../styles/components/Desktop/Work';
+} from '../../../styles/components/Mobile/Work';
 import ImageContent from './ImageContent';
 import TextContent from './TextContent';
 
-function DesktopWork() {
+function MobileWork() {
   const [scrollPercent, setScrollPercent] = useState(0);
   const [totalScroll, setTotalScroll] = useState(0);
   const [slideNumber, setSlideNumber] = useState(0);
   const [slideTop, setSlideTop] = useState(0);
   const [showTitle, setShowTitle] = useState({ in: false, out: false });
   const [showText, setShowText] = useState(false);
-  const [bgChange, setBgChange] = useState(false);
+  const [bgChange, setBgChange] = useState({ in: false, out: false });
   const [clientHeight, setClientHeight] = useState(0);
   const [scrollTop, setScrollTop] = useState(0);
 
@@ -41,10 +40,15 @@ function DesktopWork() {
       setScrollTop(documentElement.scrollTop);
 
       // Background pull up before section
-      if (scrollTop >= clientHeight * 0.99) {
-        setBgChange(true);
+      if (scrollTop >= clientHeight * 0.99 && scrollTop <= clientHeight * 2.8) {
+        setBgChange({ in: true, out: false });
+      } else if (
+        scrollTop >= clientHeight * 0.99 &&
+        scrollTop >= clientHeight * 2.8
+      ) {
+        setBgChange({ in: true, out: true });
       } else {
-        setBgChange(false);
+        setBgChange({ in: false, out: false });
       }
 
       // Setting slide number and top of new slide
@@ -79,7 +83,7 @@ function DesktopWork() {
       }
 
       // Setting project to display
-      if (slideNumber > 0) {
+      if (slideNumber > 0 && documentElement.scrollTop) {
         setProject(workData[slideNumber - 1]);
       } else {
         setProject({
@@ -91,9 +95,9 @@ function DesktopWork() {
       }
 
       // Setting WORK title
-      if (totalScroll > 0 && totalScroll < 20 / workData.length) {
+      if (totalScroll > 0 && totalScroll < 50 / workData.length) {
         setShowTitle({ in: true, out: false });
-      } else if (totalScroll > 0 && totalScroll > 20 / workData.length) {
+      } else if (totalScroll > 0 && totalScroll > 50 / workData.length) {
         setShowTitle({ in: true, out: true });
       } else {
         setShowTitle({ in: false, out: false });
@@ -128,4 +132,4 @@ function DesktopWork() {
   );
 }
 
-export default DesktopWork;
+export default MobileWork;

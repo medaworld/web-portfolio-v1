@@ -1,4 +1,4 @@
-import { IntroContainer } from '../../../styles/components/Desktop/Hero';
+import { IntroContainer } from '../../../styles/components/Mobile/Hero';
 import Name from './Name';
 import Title from './Title';
 

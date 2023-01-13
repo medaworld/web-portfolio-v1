@@ -10,7 +10,7 @@ import emailIcon from '/public/icons/MailIcon.png';
 import linkedInIcon from '/public/icons/LinkedInIcon.png';
 import twitterIcon from '/public/icons/TwitterIcon.png';
 
-function DesktopContact() {
+function MobileContact() {
   const [showTitle, setShowTitle] = useState(false);
   const [scrollPercent, setScrollPercent] = useState(0);
 
@@ -41,7 +41,7 @@ function DesktopContact() {
     <Container>
       <ContactTitle
         showTitle={showTitle}
-        style={{ transform: 'translateX(' + (100 - scrollPercent) + '%)' }}
+        style={{ transform: 'translateX(' + (130 - scrollPercent) + '%)' }}
       >
         CONTACT
       </ContactTitle>
@@ -75,4 +75,4 @@ function DesktopContact() {
   );
 }
 
-export default DesktopContact;
+export default MobileContact;

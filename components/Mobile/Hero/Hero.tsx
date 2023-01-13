@@ -1,4 +1,4 @@
-import { Container } from '../../../styles/components/Desktop/Hero';
+import { Container } from '../../../styles/components/Mobile/Hero';
 import About from './About';
 import Intro from './Intro';
 

@@ -31,7 +31,7 @@ function DesktopSkills() {
           documentElement.clientHeight) *
         100;
 
-      if (scroll > 10) {
+      if (scroll > 20) {
         setShowTitle(true);
       } else {
         setShowTitle(false);

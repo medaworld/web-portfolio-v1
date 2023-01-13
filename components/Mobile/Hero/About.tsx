@@ -4,7 +4,7 @@ import {
   AboutTitle,
   AboutContainer,
   AboutContent,
-} from '../../../styles/components/Desktop/Hero';
+} from '../../../styles/components/Mobile/Hero';
 
 function About() {
   const [scrollPercent, setScrollPercent] = useState(0);
@@ -15,11 +15,11 @@ function About() {
       const { documentElement } = event.srcElement;
 
       // Sets title translate. When scrollTop = clientHeight, it is a window down (slide 2) aka scrollPercent = 100
-      if (documentElement.scrollTop <= documentElement.clientHeight) {
-        setScrollPercent(
-          (documentElement.scrollTop / documentElement.clientHeight) * 100
-        );
-      }
+      // if (documentElement.scrollTop <= documentElement.clientHeight) {
+      setScrollPercent(
+        (documentElement.scrollTop / documentElement.clientHeight) * 100
+      );
+      // }
 
       // Sets content follow. contentFollow begins halfway down the first window and ends when second window reaches bottom.
       if (
@@ -43,13 +43,13 @@ function About() {
   return (
     <AboutContainer>
       <AboutContent
-        style={{
-          transform: 'translateY(' + contentFollowPercent * 0.2 + 'vh)',
-        }}
+      // style={{
+      //   transform: 'translateY(' + contentFollowPercent * 0.1 + 'vh)',
+      // }}
       >
         <AboutTitle
           style={{
-            transform: 'translateX(' + (scrollPercent * 3 - 50) + '%)',
+            transform: 'translateX(' + (scrollPercent * 2 - 100) + '%)',
           }}
         >
           ABOUT

@@ -15,15 +15,12 @@ export const IntroContainer = styled.div`
   align-items: center;
   height: 100vh;
   width: 100%;
+  transition: height 0.3s ease-out;
 `;
 
 export const NameContainer = styled.div`
   display: flex;
   align-items: center;
-
-  h1 {
-    font-size: 55px;
-  }
 `;
 
 export const TitleContainer = styled.div`
@@ -49,20 +46,17 @@ export const Logo = styled.img`
     }
   }
 
+  @media screen and (${device.smallest}) {
+    width: 50px;
+  }
   @media screen and (${device.mobileS}) {
-    width: 96px;
+    width: 60px;
   }
-
-  @media screen and (${device.tablet}) {
-    width: 120px;
+  @media screen and (${device.mobileM}) {
+    width: 70px;
   }
-
-  @media (${device.laptopL}) {
-    width: 144px;
-  }
-
-  @media (${device.desktop}) {
-    width: 192px;
+  @media screen and (${device.mobileL}) {
+    width: 80px;
   }
 `;
 
@@ -80,17 +74,17 @@ export const FullName = styled.div`
     }
   }
 
+  @media (${device.smallest}) {
+    font-size: 28px;
+  }
   @media (${device.mobileS}) {
+    font-size: 33px;
+  }
+  @media (${device.mobileM}) {
+    font-size: 38px;
+  }
+  @media (${device.mobileL}) {
     font-size: 44px;
-  }
-  @media (${device.tablet}) {
-    font-size: 55px;
-  }
-  @media (${device.laptopL}) {
-    font-size: 66px;
-  }
-  @media (${device.desktop}) {
-    font-size: 88px;
   }
 `;
 
@@ -109,17 +103,17 @@ export const TitleText = styled.div`
     }
   }
 
+  @media (${device.smallest}) {
+    font-size: 18px;
+  }
   @media (${device.mobileS}) {
+    font-size: 23px;
+  }
+  @media (${device.mobileM}) {
     font-size: 28px;
   }
-  @media (${device.tablet}) {
-    font-size: 35px;
-  }
-  @media (${device.laptopL}) {
-    font-size: 42px;
-  }
-  @media (${device.desktop}) {
-    font-size: 56px;
+  @media (${device.mobileL}) {
+    font-size: 32px;
   }
 `;
 
@@ -162,18 +156,17 @@ export const AboutTitle = styled.div`
   opacity: 40%;
   z-index: -1;
   transition: transform 0.5s ease-out;
-
+  @media (${device.smallest}) {
+    font-size: 86px;
+  }
   @media (${device.mobileS}) {
+    font-size: 90px;
+  }
+  @media (${device.mobileM}) {
     font-size: 96px;
   }
-  @media (${device.tablet}) {
-    font-size: 120px;
-  }
-  @media (${device.laptopL}) {
-    font-size: 144px;
-  }
-  @media (${device.desktop}) {
-    font-size: 192px;
+  @media (${device.mobileL}) {
+    font-size: 100px;
   }
 `;
 
@@ -182,16 +175,16 @@ export const AboutText = styled.div`
   text-align: left;
   margin: 10% 20% 0 10%;
 
+  @media (${device.smallest}) {
+    font-size: 22px;
+  }
   @media (${device.mobileS}) {
     font-size: 24px;
   }
-  @media (${device.tablet}) {
-    font-size: 30px;
+  @media (${device.mobileM}) {
+    font-size: 26px;
   }
-  @media (${device.laptopL}) {
-    font-size: 36px;
-  }
-  @media (${device.desktop}) {
-    font-size: 48px;
+  @media (${device.mobileL}) {
+    font-size: 28px;
   }
 `;

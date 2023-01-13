@@ -3,7 +3,7 @@ import {
   Block,
   TitleContainer,
   TitleText,
-} from '../../../styles/components/Desktop/Hero';
+} from '../../../styles/components/Mobile/Hero';
 
 function Title() {
   return (

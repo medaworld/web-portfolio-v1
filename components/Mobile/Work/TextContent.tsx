@@ -6,7 +6,7 @@ import {
   ProjectText,
   ProjectTitle,
   TextContentContainer,
-} from '../../../styles/components/Desktop/Work';
+} from '../../../styles/components/Mobile/Work';
 function TextContent({ project }: { project: ProjectProps }) {
   const roles = project.roles.map((role: string, key) => {
     return (

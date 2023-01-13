@@ -20,13 +20,17 @@ export const SkillsTitle = styled.div<{ showTitle: boolean }>`
   transition: transform 0.5s ease-out;
   transition-delay: 0.1s;
 
-  @media (${device.laptopL}) {
-    //1.2
-    font-size: 144px;
+  @media (${device.smallest}) {
+    font-size: 86px;
   }
-  @media (${device.desktop}) {
-    //1.6
-    font-size: 192px;
+  @media (${device.mobileS}) {
+    font-size: 90px;
+  }
+  @media (${device.mobileM}) {
+    font-size: 96px;
+  }
+  @media (${device.mobileL}) {
+    font-size: 100px;
   }
 `;
 
@@ -45,6 +49,19 @@ export const SkillsContainer = styled.div`
     font-size: 120%;
     font-weight: bold;
     font-family: Cabin;
+
+    @media (${device.smallest}) {
+      font-size: 70%;
+    }
+    @media (${device.mobileS}) {
+      font-size: 75%;
+    }
+    @media (${device.mobileM}) {
+      font-size: 80%;
+    }
+    @media (${device.mobileL}) {
+      font-size: 100%;
+    }
   }
 `;
 
@@ -57,13 +74,6 @@ export const Languages = styled.ul<{ showLanguages: boolean }>`
   list-style: none;
   word-wrap: break-word;
   transition: left 0.5s ease-out;
-
-  @media (${device.laptopL}) {
-    font-size: 36px;
-  }
-  @media (${device.desktop}) {
-    font-size: 48px;
-  }
 `;
 
 export const Frameworks = styled.ul<{ showFrameworks: boolean }>`
@@ -76,13 +86,6 @@ export const Frameworks = styled.ul<{ showFrameworks: boolean }>`
   list-style: none;
   word-wrap: break-word;
   transition: right 0.5s ease-out;
-
-  @media (${device.laptopL}) {
-    font-size: 36px;
-  }
-  @media (${device.desktop}) {
-    font-size: 48px;
-  }
 `;
 
 export const Tools = styled.ul<{ showTools: boolean }>`
@@ -94,13 +97,6 @@ export const Tools = styled.ul<{ showTools: boolean }>`
   list-style: none;
   word-wrap: break-word;
   transition: left 0.5s ease-out;
-
-  @media (${device.laptopL}) {
-    font-size: 36px;
-  }
-  @media (${device.desktop}) {
-    font-size: 48px;
-  }
 `;
 
 export const Design = styled.ul<{ showDesign: boolean }>`
@@ -113,22 +109,21 @@ export const Design = styled.ul<{ showDesign: boolean }>`
   list-style: none;
   word-wrap: break-word;
   transition: right 0.5s ease-out;
-
-  @media (${device.laptopL}) {
-    font-size: 36px;
-  }
-  @media (${device.desktop}) {
-    font-size: 48px;
-  }
 `;
 
 export const Skill = styled.li`
   font-size: 25px;
 
-  @media (${device.laptopL}) {
-    font-size: 30px;
+  @media (${device.smallest}) {
+    font-size: 16px;
   }
-  @media (${device.desktop}) {
-    font-size: 40px;
+  @media (${device.mobileS}) {
+    font-size: 18px;
+  }
+  @media (${device.mobileM}) {
+    font-size: 20px;
+  }
+  @media (${device.mobileL}) {
+    font-size: 22px;
   }
 `;

@@ -2,7 +2,7 @@ import {
   NameContainer,
   Logo,
   FullName,
-} from '../../../styles/components/Desktop/Hero';
+} from '../../../styles/components/Mobile/Hero';
 import MyLogo from '/public/favicon.png';
 
 function Name() {

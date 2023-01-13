@@ -18,7 +18,7 @@ export const WorkTitle = styled.div<WorkTitleProps>`
   color: ${(p) => p.theme.colors.success};
   top: ${(p) =>
     p.showTitle.in && !p.showTitle.out
-      ? '10%'
+      ? '0%'
       : p.showTitle.in && p.showTitle.out
       ? '-40%'
       : '110%'};
@@ -26,23 +26,35 @@ export const WorkTitle = styled.div<WorkTitleProps>`
   right: 5%;
   transition: all 0.5s ease-out;
 
-  @media (${device.laptopL}) {
-    font-size: 144px;
+  @media (${device.smallest}) {
+    font-size: 86px;
   }
-  @media (${device.desktop}) {
-    font-size: 192px;
+  @media (${device.mobileS}) {
+    font-size: 90px;
+  }
+  @media (${device.mobileM}) {
+    font-size: 96px;
+  }
+  @media (${device.mobileL}) {
+    font-size: 100px;
   }
 `;
 
-export const BackgroundBlock = styled.div<{ bgChange: boolean }>`
-  position: absolute;
-  top: 0;
+export const BackgroundBlock = styled.div<{
+  bgChange: { in: boolean; out: boolean };
+}>`
+  position: fixed;
+  bottom: ${(p) =>
+    p.bgChange.in && !p.bgChange.out
+      ? '0%'
+      : p.bgChange.in && p.bgChange.out
+      ? '100vh'
+      : '-100vh'};
+  /* bottom: ${(p) => (p.bgChange ? '0' : '-100vh')}; */
   background-color: ${(p) => p.theme.colors.primary};
   width: 100vw;
-  height: 101vh;
-  z-index: 0;
-  transform: ${(p) => (p.bgChange ? 'translateY(-100vh)' : '')};
-  transition: transform 0.5s ease-in-out;
+  height: 100vh;
+  transition: all 0.5s ease-out;
 `;
 
 export const TextContentContainer = styled.div`
@@ -56,6 +68,7 @@ export const TextContentContainer = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   color: ${(p) => p.theme.colors.background};
+  z-index: 1;
 `;
 
 export const ProjectText = styled.div<{ fontSize?: number }>`
@@ -96,31 +109,49 @@ export const ProjectText = styled.div<{ fontSize?: number }>`
 export const ProjectTitle = styled.span`
   font: 50px Cabin;
 
-  @media (${device.laptopL}) {
-    font-size: 60px;
+  @media (${device.smallest}) {
+    font-size: 30px;
   }
-  @media (${device.desktop}) {
-    font-size: 80px;
+  @media (${device.mobileS}) {
+    font-size: 32px;
+  }
+  @media (${device.mobileM}) {
+    font-size: 35px;
+  }
+  @media (${device.mobileL}) {
+    font-size: 40px;
   }
 `;
 
 export const ProjectDesc = styled.span`
   font: 30px Cabin;
-  @media (${device.laptopL}) {
-    font-size: 36px;
+  @media (${device.smallest}) {
+    font-size: 18px;
   }
-  @media (${device.desktop}) {
-    font-size: 48px;
+  @media (${device.mobileS}) {
+    font-size: 20px;
+  }
+  @media (${device.mobileM}) {
+    font-size: 23px;
+  }
+  @media (${device.mobileL}) {
+    font-size: 25px;
   }
 `;
 
 export const ProjectRoles = styled.span`
   font: 25px Cabin;
-  @media (${device.laptopL}) {
-    font-size: 30px;
+  @media (${device.smallest}) {
+    font-size: 14px;
   }
-  @media (${device.desktop}) {
-    font-size: 40px;
+  @media (${device.mobileS}) {
+    font-size: 16px;
+  }
+  @media (${device.mobileM}) {
+    font-size: 19px;
+  }
+  @media (${device.mobileL}) {
+    font-size: 22px;
   }
 `;
 
@@ -132,42 +163,64 @@ export const Slide = styled.div`
 export const ImageContentContainer = styled.div`
   height: 100vh;
   width: 50%;
-  margin-left: 50%;
   display: flex;
   position: relative;
 `;
 
-export const ImageContainer = styled.div`
-  height: 50%;
+export const ImageContainer = styled.div<{ slidePercent: number }>`
+  width: 100%;
+  height: 818px;
   transition: all 0.5s ease-out;
   position: relative;
+  transform: ${(p) =>
+    p.slidePercent > 5 ? 'translateY(-50%)' : 'translateY(0)'};
   filter: brightness(110%);
+  @media (${device.desktop}) {
+    height: 870px;
+  }
+`;
 
-  :hover {
-    opacity: 70%;
+export const DesktopImage = styled.img`
+  position: absolute;
+  width: 1024px;
+  object-fit: contain;
+  margin-bottom: -10%;
+  margin-left: -20%;
+  transition: all 0.5s ease-out;
 
-    div:first-child {
-      opacity: 100%;
-    }
-    img:nth-child(2) {
-      margin-left: -10%;
-    }
-    img:last-child {
-      margin-left: 90%;
-    }
+  @media (${device.smallest}) {
+    width: 320px;
+  }
+  @media (${device.mobileS}) {
+    width: 375px;
+  }
+  @media (${device.mobileM}) {
+    width: 700px;
+  }
+  @media (${device.mobileL}) {
+    width: 900px;
   }
 `;
 
 export const MobileImage = styled.img`
-  width: 50%;
+  position: absolute;
+  width: 384px;
+  margin-left: 100%;
+  margin-top: 40vh;
   transition: all 0.7s ease-out;
-  margin-left: 50%;
-`;
 
-export const DesktopImage = styled.img`
-  width: 130%;
-  margin-bottom: -10%;
-  transition: all 0.5s ease-out;
+  @media (${device.smallest}) {
+    width: 200px;
+  }
+  @media (${device.mobileS}) {
+    width: 205px;
+  }
+  @media (${device.mobileM}) {
+    width: 250px;
+  }
+  @media (${device.mobileL}) {
+    width: 280px;
+  }
 `;
 
 export const ImageNavWindow = styled.div`

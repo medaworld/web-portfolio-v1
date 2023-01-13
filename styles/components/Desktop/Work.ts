@@ -26,12 +26,6 @@ export const WorkTitle = styled.div<WorkTitleProps>`
   right: 5%;
   transition: all 0.5s ease-out;
 
-  @media (${device.mobileS}) {
-    font-size: 96px;
-  }
-  @media (${device.tablet}) {
-    font-size: 120px;
-  }
   @media (${device.laptopL}) {
     font-size: 144px;
   }
