@@ -9,7 +9,7 @@ import {
 import ImageContent from './ImageContent';
 import TextContent from './TextContent';
 
-function Work() {
+function DesktopWork() {
   const [scrollPercent, setScrollPercent] = useState(0);
   const [totalScroll, setTotalScroll] = useState(0);
   const [slideNumber, setSlideNumber] = useState(0);
@@ -27,52 +27,58 @@ function Work() {
     images: { desktop: '', mobile: '' },
   });
 
-  let test: { index: number; scroll: number };
-
   useEffect(function mount() {
     function onScroll(event: any) {
       const { documentElement } = event.srcElement;
-      const workSectionStart = documentElement.clientHeight * 1;
-      const workSectionHeight =
-        workSectionStart + documentElement.clientHeight * workData.length;
+
+      const sectionStart = documentElement.clientHeight;
+      const sectionHeight =
+        sectionStart + documentElement.clientHeight * workData.length;
+      const beforeSectionArea = scrollTop < sectionStart;
+      const inSectionArea = scrollTop > sectionStart;
+
       setClientHeight(documentElement.clientHeight);
       setScrollTop(documentElement.scrollTop);
 
+      // Background pull up before section
+      if (scrollTop >= clientHeight * 0.99) {
+        setBgChange(true);
+      } else {
+        setBgChange(false);
+      }
+
+      // Setting slide number and top of new slide
       for (let i = 0; i <= workData.length; i++) {
         if (
-          documentElement.scrollTop >=
-            workSectionStart + documentElement.clientHeight * (i - 1) &&
-          documentElement.scrollTop <=
-            workSectionStart + documentElement.clientHeight * i
+          scrollTop >= sectionStart + documentElement.clientHeight * (i - 1) &&
+          scrollTop <= sectionStart + documentElement.clientHeight * i
         ) {
           setSlideNumber(i);
-          setSlideTop(
-            workSectionStart + documentElement.clientHeight * (i - 1)
-          );
+          setSlideTop(sectionStart + documentElement.clientHeight * (i - 1));
         }
       }
 
-      if (slideNumber < 1) {
+      // Setting scroll percent
+      if (beforeSectionArea) {
         setScrollPercent(0);
         setTotalScroll(0);
       } else {
         setScrollPercent(
-          ((documentElement.scrollTop - slideTop) /
-            documentElement.clientHeight) *
-            100
+          ((scrollTop - slideTop) / documentElement.clientHeight) * 100
         );
         setTotalScroll(
-          ((documentElement.scrollTop - workSectionStart) * 100) /
-            (workSectionHeight - workSectionStart)
+          ((scrollTop - sectionStart) * 100) / (sectionHeight - sectionStart)
         );
       }
 
-      if (slideNumber > 0 && scrollPercent < 99) {
+      // Setting text to show
+      if (inSectionArea && scrollPercent < 99) {
         setShowText(true);
       } else {
         setShowText(false);
       }
 
+      // Setting project to display
       if (slideNumber > 0) {
         setProject(workData[slideNumber - 1]);
       } else {
@@ -84,12 +90,7 @@ function Work() {
         });
       }
 
-      if (documentElement.scrollTop >= documentElement.clientHeight * 0.99) {
-        setBgChange(true);
-      } else {
-        setBgChange(false);
-      }
-
+      // Setting WORK title
       if (totalScroll > 0 && totalScroll < 20 / workData.length) {
         setShowTitle({ in: true, out: false });
       } else if (totalScroll > 0 && totalScroll > 20 / workData.length) {
@@ -105,12 +106,12 @@ function Work() {
     };
   });
 
-  const imageContent = workData.map((work, key) => {
+  const imageContent = workData.map((work, index) => {
     return (
       <ImageContent
-        key={key}
+        key={index}
         data={work}
-        index={key}
+        index={index}
         clientHeight={clientHeight}
         scrollTop={scrollTop}
       />
@@ -127,4 +128,4 @@ function Work() {
   );
 }
 
-export default Work;
+export default DesktopWork;

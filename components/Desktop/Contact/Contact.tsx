@@ -10,7 +10,7 @@ import emailIcon from '/public/icons/MailIcon.png';
 import linkedInIcon from '/public/icons/LinkedInIcon.png';
 import twitterIcon from '/public/icons/TwitterIcon.png';
 
-function Contact() {
+function DesktopContact() {
   const [showTitle, setShowTitle] = useState(false);
   const [scrollPercent, setScrollPercent] = useState(0);
 
@@ -75,4 +75,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export default DesktopContact;

@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import { useState } from 'react';
 import { WorkData } from '../../../helpers/organizers/types';
 import {
   DesktopImage,

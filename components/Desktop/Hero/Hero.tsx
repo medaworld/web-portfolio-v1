@@ -2,7 +2,7 @@ import { Container } from '../../../styles/components/Desktop/Hero';
 import About from './About';
 import Intro from './Intro';
 
-function Hero() {
+function DesktopHero() {
   return (
     <Container>
       <Intro />
@@ -11,4 +11,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default DesktopHero;

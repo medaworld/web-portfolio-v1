@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import device from '../../../helpers/organizers/breakpoints';
 
 export const Container = styled.div`
   display: flex;
@@ -7,6 +8,7 @@ export const Container = styled.div`
   flex-flow: row nowrap;
   overflow-x: clip;
   height: 50vh;
+  position: relative;
 `;
 
 export const ContactTitle = styled.div<{ showTitle: boolean }>`
@@ -17,6 +19,13 @@ export const ContactTitle = styled.div<{ showTitle: boolean }>`
   opacity: 20%;
   z-index: -1;
   transition: transform 0.5s ease-out;
+
+  @media (${device.laptopL}) {
+    font-size: 144px;
+  }
+  @media (${device.desktop}) {
+    font-size: 192px;
+  }
 `;
 
 export const ContactIcons = styled.div`
@@ -33,6 +42,15 @@ export const LogoWrapper = styled.div`
   justify-content: center;
   align-items: center;
   margin-right: 15px;
+
+  @media (${device.laptopL}) {
+    height: 132px;
+    width: 132px;
+  }
+  @media (${device.desktop}) {
+    height: 176px;
+    width: 176px;
+  }
 `;
 
 export const Logo = styled.div<{ hoverColor: string; url: string }>`

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import device from '../../../helpers/organizers/breakpoints';
 import { WorkTitleProps } from '../../../helpers/organizers/types';
 
 export const Container = styled.div`
@@ -24,6 +25,15 @@ export const WorkTitle = styled.div<WorkTitleProps>`
   opacity: 40%;
   right: 5%;
   transition: all 0.5s ease-out;
+
+  @media (${device.laptopL}) {
+    //1.2
+    font-size: 144px;
+  }
+  @media (${device.desktop}) {
+    //1.6
+    font-size: 192px;
+  }
 `;
 
 export const TextContentContainer = styled.div`
@@ -39,7 +49,7 @@ export const TextContentContainer = styled.div`
   color: ${(p) => p.theme.colors.background};
 `;
 
-export const ProjectText = styled.div<{ fontSize: number }>`
+export const ProjectText = styled.div<{ fontSize?: number }>`
   font: ${(p) => p.fontSize + 'px Cabin'};
   transition: all 0.4s ease-out;
 
@@ -71,6 +81,41 @@ export const ProjectText = styled.div<{ fontSize: number }>`
         color: inherit;
       }
     }
+  }
+`;
+
+export const ProjectTitle = styled.span`
+  font: 50px Cabin;
+
+  @media (${device.laptopL}) {
+    //1.2
+    font-size: 60px;
+  }
+  @media (${device.desktop}) {
+    //1.6
+    font-size: 80px;
+  }
+`;
+
+export const ProjectDesc = styled.span`
+  font: 30px Cabin;
+  @media (${device.laptopL}) {
+    //1.2
+    font-size: 36px;
+  }
+  @media (${device.desktop}) {
+    //1.6
+    font-size: 48px;
+  }
+`;
+
+export const ProjectRoles = styled.span`
+  font: 25px Cabin;
+  @media (${device.laptopL}) {
+    font-size: 30px;
+  }
+  @media (${device.desktop}) {
+    font-size: 40px;
   }
 `;
 

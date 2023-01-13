@@ -10,7 +10,7 @@ import {
   Tools,
 } from '../../../styles/components/Desktop/Skills';
 
-function Skills() {
+function DesktopSkills() {
   const [showTitle, setShowTitle] = useState(false);
   const [showLanguages, setShowLanguages] = useState(false);
   const [showFrameworks, setShowFrameworks] = useState(false);
@@ -31,31 +31,31 @@ function Skills() {
           documentElement.clientHeight) *
         100;
 
-      if (scroll > 0) {
+      if (scroll > 10) {
         setShowTitle(true);
       } else {
         setShowTitle(false);
       }
 
-      if (scroll > 15) {
+      if (scroll > 25) {
         setShowLanguages(true);
       } else {
         setShowLanguages(false);
       }
 
-      if (scroll > 30) {
+      if (scroll > 40) {
         setShowFrameworks(true);
       } else {
         setShowFrameworks(false);
       }
 
-      if (scroll > 50) {
+      if (scroll > 60) {
         setShowTools(true);
       } else {
         setShowTools(false);
       }
 
-      if (scroll > 67) {
+      if (scroll > 77) {
         setShowDesign(true);
       } else {
         setShowDesign(false);
@@ -97,4 +97,4 @@ function Skills() {
   );
 }
 
-export default Skills;
+export default DesktopSkills;

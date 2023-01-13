@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import device from '../../../helpers/organizers/breakpoints';
 
 export const Container = styled.div`
   display: flex;
@@ -18,6 +19,15 @@ export const SkillsTitle = styled.div<{ showTitle: boolean }>`
   transform: ${(p) => (p.showTitle ? '' : 'translateY(-110px)')};
   transition: transform 0.5s ease-out;
   transition-delay: 0.1s;
+
+  @media (${device.laptopL}) {
+    //1.2
+    font-size: 144px;
+  }
+  @media (${device.desktop}) {
+    //1.6
+    font-size: 192px;
+  }
 `;
 
 export const SkillsContainer = styled.div`
@@ -47,6 +57,13 @@ export const Languages = styled.ul<{ showLanguages: boolean }>`
   list-style: none;
   word-wrap: break-word;
   transition: left 0.5s ease-out;
+
+  @media (${device.laptopL}) {
+    font-size: 36px;
+  }
+  @media (${device.desktop}) {
+    font-size: 48px;
+  }
 `;
 
 export const Frameworks = styled.ul<{ showFrameworks: boolean }>`
@@ -59,6 +76,13 @@ export const Frameworks = styled.ul<{ showFrameworks: boolean }>`
   list-style: none;
   word-wrap: break-word;
   transition: right 0.5s ease-out;
+
+  @media (${device.laptopL}) {
+    font-size: 36px;
+  }
+  @media (${device.desktop}) {
+    font-size: 48px;
+  }
 `;
 
 export const Tools = styled.ul<{ showTools: boolean }>`
@@ -70,7 +94,15 @@ export const Tools = styled.ul<{ showTools: boolean }>`
   list-style: none;
   word-wrap: break-word;
   transition: left 0.5s ease-out;
+
+  @media (${device.laptopL}) {
+    font-size: 36px;
+  }
+  @media (${device.desktop}) {
+    font-size: 48px;
+  }
 `;
+
 export const Design = styled.ul<{ showDesign: boolean }>`
   position: absolute;
   top: 67.5vh;
@@ -81,8 +113,22 @@ export const Design = styled.ul<{ showDesign: boolean }>`
   list-style: none;
   word-wrap: break-word;
   transition: right 0.5s ease-out;
+
+  @media (${device.laptopL}) {
+    font-size: 36px;
+  }
+  @media (${device.desktop}) {
+    font-size: 48px;
+  }
 `;
 
 export const Skill = styled.li`
   font-size: 25px;
+
+  @media (${device.laptopL}) {
+    font-size: 30px;
+  }
+  @media (${device.desktop}) {
+    font-size: 40px;
+  }
 `;

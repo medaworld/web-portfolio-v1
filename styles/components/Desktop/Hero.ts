@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import device from '../../../helpers/organizers/breakpoints';
 
 export const Container = styled.div`
   display: flex;
@@ -37,6 +38,7 @@ export const TitleContainer = styled.div`
 
 export const Logo = styled.img`
   animation: rollIn 2s normal;
+  width: 120px;
   @keyframes rollIn {
     0% {
       transform: translate(-900px, 0) rotate(0deg);
@@ -45,9 +47,20 @@ export const Logo = styled.img`
       transform: translate(0, 0) rotate(359deg);
     }
   }
+
+  @media (${device.laptopL}) {
+    width: 144px;
+  }
+
+  @media (${device.desktop}) {
+    width: 192px;
+  }
 `;
 
-export const FullName = styled.h1`
+export const FullName = styled.div`
+  display: block;
+  font-size: 55px;
+  margin: 0.67em 0;
   animation: slideBack 2s normal;
   @keyframes slideBack {
     0% {
@@ -57,9 +70,19 @@ export const FullName = styled.h1`
       transform: translate(0, 0);
     }
   }
+
+  @media (${device.laptopL}) {
+    font-size: 66px;
+  }
+  @media (${device.desktop}) {
+    font-size: 88px;
+  }
 `;
 
-export const TitleText = styled.h2`
+export const TitleText = styled.div`
+  display: block;
+  font-size: 35px;
+  margin: 0.83em 0;
   animation: moveUp 2s normal;
   @keyframes moveUp {
     0% {
@@ -70,27 +93,33 @@ export const TitleText = styled.h2`
       opacity: 0;
     }
   }
+
+  @media (${device.laptopL}) {
+    //1.2
+    font-size: 42px;
+  }
+  @media (${device.desktop}) {
+    //1.6
+    font-size: 56px;
+  }
 `;
 
 export const Block = styled.div`
   position: absolute;
   background-color: ${(p) => p.theme.colors.background};
-  width: 300px;
-  height: 300px;
+  width: 100vw;
   overflow: auto;
   z-index: 10;
-  transform: translateY(75px);
+  bottom: 0;
   animation: hideBlock 2s linear forwards;
-  animation-delay: 2s;
 
   @keyframes hideBlock {
     0% {
       opacity: 1;
-      height: 300px;
+      height: 45vh;
     }
     100% {
-      opacity: 0;
-      height: 0;
+      height: 35vh;
     }
   }
 `;
@@ -114,6 +143,15 @@ export const AboutTitle = styled.div`
   opacity: 40%;
   z-index: -1;
   transition: transform 0.5s ease-out;
+
+  @media (${device.laptopL}) {
+    //1.2
+    font-size: 144px;
+  }
+  @media (${device.desktop}) {
+    //1.6
+    font-size: 192px;
+  }
 `;
 
 export const AboutText = styled.div`
@@ -121,4 +159,13 @@ export const AboutText = styled.div`
   text-align: left;
   margin: 10% 20% 0 10%;
   font-size: 30px;
+
+  @media (${device.laptopL}) {
+    //1.2
+    font-size: 36px;
+  }
+  @media (${device.desktop}) {
+    //1.6
+    font-size: 48px;
+  }
 `;
