@@ -90,9 +90,9 @@ function DesktopWork() {
       }
 
       // Setting WORK title
-      if (totalScroll > 0 && totalScroll < 20 / workData.length) {
+      if (totalScroll > 0 && totalScroll < 50 / workData.length) {
         setShowTitle({ in: true, out: false });
-      } else if (totalScroll > 0 && totalScroll > 20 / workData.length) {
+      } else if (totalScroll > 0 && totalScroll > 50 / workData.length) {
         setShowTitle({ in: true, out: true });
       } else {
         setShowTitle({ in: false, out: false });

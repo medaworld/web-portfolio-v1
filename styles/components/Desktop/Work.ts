@@ -42,7 +42,7 @@ export const BackgroundBlock = styled.div<{ bgChange: boolean }>`
   height: 200vh;
   z-index: 0;
   transform: ${(p) => (p.bgChange ? 'translateY(-100vh)' : '')};
-  transition: transform 0.5s ease-in-out;
+  transition: transform 0.5s ease-out;
 `;
 
 export const TextContentContainer = styled.div`
