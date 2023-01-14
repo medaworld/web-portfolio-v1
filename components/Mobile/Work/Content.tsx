@@ -37,7 +37,7 @@ function Content({ project }: { project: WorkData }) {
 
   return (
     <ContentContainer>
-      <ImageContentContainer onClick={clickHandler}>
+      <ImageContentContainer onClick={clickHandler} show={showLinks}>
         <ImageNavWindow show={showLinks}>
           {project.links.site && (
             <VisitButton onClick={() => openInNewTab(project.links.site!)}>

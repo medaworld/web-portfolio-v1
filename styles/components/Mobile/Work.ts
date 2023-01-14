@@ -148,12 +148,15 @@ export const ProjectRoles = styled.span`
   }
 `;
 
-export const ImageContentContainer = styled.div`
+export const ImageContentContainer = styled.div<{ show: boolean }>`
   position: relative;
+  opacity: 100%;
   display: flex;
   height: 40vh;
   justify-content: center;
   align-items: end;
+  opacity: ${(p) => (p.show ? '80%' : '100%')};
+  transition: opacity 0.3s ease-out;
 `;
 
 export const DesktopImage = styled.img`
