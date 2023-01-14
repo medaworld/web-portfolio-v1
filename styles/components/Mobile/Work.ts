@@ -159,6 +159,19 @@ export const ImageContentContainer = styled.div`
 export const DesktopImage = styled.img`
   position: absolute;
   width: 1024px;
+  animation: fade 0.5s ease-out;
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
   @media (${device.smallest}) {
     width: 300px;
@@ -179,6 +192,20 @@ export const MobileImage = styled.img`
   width: 34px;
   transition: all 0.7s ease-out;
   margin-left: 25%;
+
+  animation: fade 0.5s ease-out;
+
+  @keyframes fade {
+    from {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 
   @media (${device.smallest}) {
     width: 70px;
