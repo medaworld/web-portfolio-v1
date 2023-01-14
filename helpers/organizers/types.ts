@@ -28,10 +28,8 @@ export type WorkTitleProps = {
 };
 
 export type ProjectProps = {
-  order: number;
   name: string;
   description: string;
   roles: string[];
   images: { desktop: string; mobile: string };
-  links: { site: string | null; github: string | null };
 };
