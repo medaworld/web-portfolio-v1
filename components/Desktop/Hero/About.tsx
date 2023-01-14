@@ -55,9 +55,9 @@ function About() {
           ABOUT
         </AboutTitle>
         <AboutText>
-          Full-stack web developer (front-end focus) enthusiastic in building
-          exceptional user experiences. UCLA alumni with a passion in design,
-          technology, photography and music.
+          Front-end web developer enthusiastic in building exceptional user
+          experiences. UCLA alumni with a passion in design, technology,
+          photography and music.
         </AboutText>
       </AboutContent>
     </AboutContainer>

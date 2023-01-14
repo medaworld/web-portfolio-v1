@@ -19,6 +19,7 @@ export const ContactTitle = styled.div<{ showTitle: boolean }>`
   opacity: 20%;
   z-index: -1;
   transition: transform 0.5s ease-out;
+  transform: ${(p) => (p.showTitle ? '' : 'translateX(-100vw)')};
 
   @media (${device.smallest}) {
     font-size: 86px;

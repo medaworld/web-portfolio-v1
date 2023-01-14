@@ -213,6 +213,10 @@ export const ImageNavWindow = styled.div`
   align-items: center;
   transition: all 0.7s ease-out;
   z-index: 1;
+
+  @supports (overflow: clip) {
+    height: 100%;
+  }
 `;
 
 export const VisitButton = styled.div`

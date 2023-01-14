@@ -39,10 +39,10 @@ export const Logo = styled.img`
 
   @keyframes rollIn {
     0% {
-      transform: translate(-900px, 0) rotate(0deg);
+      transform: translateX(-100vw) rotate(0deg);
     }
     100% {
-      transform: translate(0, 0) rotate(359deg);
+      transform: translateX(0) rotate(359deg);
     }
   }
 
@@ -67,10 +67,10 @@ export const FullName = styled.div`
   animation: slideBack 2s normal;
   @keyframes slideBack {
     0% {
-      transform: translate(900px, 0);
+      transform: translateX(100vw);
     }
     100% {
-      transform: translate(0, 0);
+      transform: translateX(0);
     }
   }
 
@@ -148,13 +148,15 @@ export const AboutContent = styled.div`
   transition: transform 0.5s ease-out;
 `;
 
-export const AboutTitle = styled.div`
+export const AboutTitle = styled.div<{ showTitle: boolean }>`
   position: absolute;
   font: 120px Cabin;
   line-height: 120px;
   color: ${(p) => p.theme.colors.color};
   opacity: 40%;
+  margin-left: 15px;
   z-index: -1;
+  transform: ${(p) => (p.showTitle ? '' : 'translateX(-100vw)')};
   transition: transform 0.5s ease-out;
   @media (${device.smallest}) {
     font-size: 86px;

@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import device from '../../../helpers/organizers/breakpoints';
-import { WorkTitleProps } from '../../../helpers/organizers/types';
 
 export const Container = styled.div`
   position: relative;
@@ -8,35 +7,6 @@ export const Container = styled.div`
   flex-flow: row nowrap;
   overflow-x: clip;
   flex-direction: column;
-`;
-
-export const WorkTitle = styled.div<WorkTitleProps>`
-  position: fixed;
-  font: 120px Cabin;
-  line-height: 120px;
-  color: ${(p) => p.theme.colors.success};
-  top: ${(p) =>
-    p.showTitle.in && !p.showTitle.out
-      ? '0%'
-      : p.showTitle.in && p.showTitle.out
-      ? '-40%'
-      : '110%'};
-  opacity: 40%;
-  right: 5%;
-  transition: all 0.3s ease-out;
-
-  @media (${device.smallest}) {
-    font-size: 86px;
-  }
-  @media (${device.mobileS}) {
-    font-size: 90px;
-  }
-  @media (${device.mobileM}) {
-    font-size: 96px;
-  }
-  @media (${device.mobileL}) {
-    font-size: 100px;
-  }
 `;
 
 export const BackgroundSpacer = styled.div<{ slides: number }>`
@@ -71,7 +41,7 @@ export const ProjectText = styled.div<{ fontSize?: number }>`
   span {
     overflow: hidden;
     background-color: ${(p) => p.theme.colors.darker};
-    animation: backgroundFade 0.5s ease-out, textFade 0.5s linear;
+    animation: backgroundFade 0.3s ease-out, textFade 0.3s linear;
 
     @keyframes backgroundFade {
       from {
@@ -162,7 +132,7 @@ export const ImageContentContainer = styled.div<{ show: boolean }>`
 export const DesktopImage = styled.img`
   position: absolute;
   width: 1024px;
-  animation: fade 1s ease-out;
+  animation: fade 0.3s ease-out;
 
   @keyframes fade {
     from {
@@ -196,7 +166,7 @@ export const MobileImage = styled.img`
   transition: all 0.7s ease-out;
   margin-left: 25%;
 
-  animation: fade 1s ease-out;
+  animation: fade 0.3s ease-out;
 
   @keyframes fade {
     from {
@@ -255,14 +225,15 @@ export const BackgroundBlock = styled.div<{
   bgChange: { in: boolean; out: boolean };
 }>`
   position: fixed;
-  bottom: ${(p) =>
+  transform: ${(p) =>
     p.bgChange.in && !p.bgChange.out
-      ? '0%'
+      ? 'translateY(0)'
       : p.bgChange.in && p.bgChange.out
-      ? '100vh'
-      : '-100vh'};
+      ? 'translateY(-100vh)'
+      : 'translateY(100vh)'};
+  bottom: 0;
   background-color: ${(p) => p.theme.colors.primary};
   width: 100vw;
   height: 100vh;
-  transition: bottom 0.3s ease-out;
+  transition: transform 0.3s ease-out;
 `;

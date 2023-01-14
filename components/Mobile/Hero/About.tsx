@@ -8,7 +8,7 @@ import {
 
 function About() {
   const [scrollPercent, setScrollPercent] = useState(0);
-  const [contentFollowPercent, setContentFollowPercent] = useState(0);
+  const [showTitle, setShowTitle] = useState(false);
 
   useEffect(function mount() {
     function onScroll(event: any) {
@@ -19,18 +19,11 @@ function About() {
       setScrollPercent(
         (documentElement.scrollTop / documentElement.clientHeight) * 100
       );
-      // }
 
-      // Sets content follow. contentFollow begins halfway down the first window and ends when second window reaches bottom.
-      if (
-        documentElement.scrollTop >= documentElement.clientHeight / 2 &&
-        documentElement.scrollTop <= documentElement.clientHeight
-      ) {
-        setContentFollowPercent(
-          ((documentElement.scrollTop - documentElement.clientHeight / 2) / // Represents when percentage begings
-            (documentElement.clientHeight / 2)) * // Ends half a window down
-            100
-        );
+      if (scrollPercent > 50) {
+        setShowTitle(true);
+      } else {
+        setShowTitle(false);
       }
     }
 
@@ -42,22 +35,12 @@ function About() {
 
   return (
     <AboutContainer>
-      <AboutContent
-      // style={{
-      //   transform: 'translateY(' + contentFollowPercent * 0.1 + 'vh)',
-      // }}
-      >
-        <AboutTitle
-          style={{
-            transform: 'translateX(' + (scrollPercent * 2 - 100) + '%)',
-          }}
-        >
-          ABOUT
-        </AboutTitle>
+      <AboutContent>
+        <AboutTitle showTitle={showTitle}>ABOUT</AboutTitle>
         <AboutText>
-          Full-stack web developer (front-end focus) enthusiastic in building
-          exceptional user experiences. UCLA alumni with a passion in design,
-          technology, photography and music.
+          Front-end web developer enthusiastic in building exceptional user
+          experiences. UCLA alumni with a passion in design, technology,
+          photography and music.
         </AboutText>
       </AboutContent>
     </AboutContainer>

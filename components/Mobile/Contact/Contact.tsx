@@ -12,20 +12,19 @@ import twitterIcon from '/public/icons/TwitterIcon.png';
 
 function MobileContact() {
   const [showTitle, setShowTitle] = useState(false);
-  const [scrollPercent, setScrollPercent] = useState(0);
 
   useEffect(function mount() {
     function onScroll(event: any) {
       const { documentElement } = event.srcElement;
 
       const scroll =
-        ((documentElement.scrollTop - documentElement.clientHeight * 4) /
+        ((documentElement.scrollTop - documentElement.clientHeight * 3.5) /
           documentElement.clientHeight) *
         100;
+      console.log(scroll);
 
-      if (scroll > 0) {
+      if (scroll > 100) {
         setShowTitle(true);
-        setScrollPercent(scroll);
       } else {
         setShowTitle(false);
       }
@@ -39,12 +38,7 @@ function MobileContact() {
 
   return (
     <Container>
-      <ContactTitle
-        showTitle={showTitle}
-        style={{ transform: 'translateX(' + (72 - scrollPercent) + '%)' }}
-      >
-        CONTACT
-      </ContactTitle>
+      <ContactTitle showTitle={showTitle}>CONTACT</ContactTitle>
       <ContactIcons>
         <ContactIcon
           url={'https://github.com/medaworld'}
