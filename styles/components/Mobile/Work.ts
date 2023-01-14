@@ -227,13 +227,13 @@ export const BackgroundBlock = styled.div<{
   position: fixed;
   transform: ${(p) =>
     p.bgChange.in && !p.bgChange.out
-      ? 'translateY(0)'
+      ? 'translateY(-50)'
       : p.bgChange.in && p.bgChange.out
-      ? 'translateY(-100vh)'
-      : 'translateY(100vh)'};
+      ? 'translateY(-150vh)'
+      : 'translateY(150vh)'};
   bottom: 0;
   background-color: ${(p) => p.theme.colors.primary};
   width: 100vw;
-  height: 100vh;
+  height: 150vh;
   transition: transform 0.3s ease-out;
 `;

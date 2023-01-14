@@ -17,7 +17,7 @@ function MobileSkills() {
   const [showTools, setShowTools] = useState(false);
   const [showDesign, setShowDesign] = useState(false);
 
-  const languages = ['JavaScript', 'TypeScript', 'HTML', 'CSS', 'SQL'];
+  const languages = ['JavaScript', 'TypeScript', 'HTML', 'CSS'];
   const frameworks = ['React & Redux', 'Next.js', 'Node.js', 'Express'];
   const tools = ['MongoDB', 'Git & Github', 'Postman', 'Firebase'];
   const design = ['Affinity Designer', 'Affinity Publisher', 'Affinity Photo'];
@@ -31,30 +31,31 @@ function MobileSkills() {
           documentElement.clientHeight) *
         100;
 
-      if (scroll > 50) {
+      if (scroll > 20) {
         setShowTitle(true);
       } else {
         setShowTitle(false);
       }
-      if (scroll > 65) {
+
+      if (scroll > 25) {
         setShowLanguages(true);
       } else {
         setShowLanguages(false);
       }
 
-      if (scroll > 75) {
+      if (scroll > 40) {
         setShowFrameworks(true);
       } else {
         setShowFrameworks(false);
       }
 
-      if (scroll > 85) {
+      if (scroll > 50) {
         setShowTools(true);
       } else {
         setShowTools(false);
       }
 
-      if (scroll > 95) {
+      if (scroll > 55) {
         setShowDesign(true);
       } else {
         setShowDesign(false);

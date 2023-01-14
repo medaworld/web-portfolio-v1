@@ -17,7 +17,12 @@ export const WorkTitle = styled.div<WorkTitleProps>`
   line-height: 120px;
   color: ${(p) => p.theme.colors.success};
   top: 5%;
-  opacity: 40%;
+  opacity: ${(p) =>
+    p.showTitle.in && !p.showTitle.out
+      ? '40%'
+      : p.showTitle.in && p.showTitle.out
+      ? '0%'
+      : '0%'};
   right: 5%;
   transition: transform 0.5s ease-out;
   transform: ${(p) =>

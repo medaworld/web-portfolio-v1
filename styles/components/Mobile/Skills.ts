@@ -12,7 +12,7 @@ export const Container = styled.div`
 export const SkillsTitle = styled.div<{ showTitle: boolean }>`
   font: 120px Cabin;
   line-height: 120px;
-  margin-top: 15px;
+  margin-top: 20px;
   color: ${(p) => p.theme.colors.error};
   opacity: 60%;
   z-index: -1;
@@ -43,6 +43,7 @@ export const SkillsContainer = styled.div`
   justify-content: space-around;
   flex-wrap: wrap;
   overflow: hidden;
+  z-index: -1;
 
   ul:before {
     content: attr(aria-label);

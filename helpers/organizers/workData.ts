@@ -1,4 +1,3 @@
-import { WorkData } from './types';
 import BlockchainDesktop from '/public/images/Blockchain/BlockchainDesktop.png';
 import BlockchainMobile from '/public/images/Blockchain/BlockchainMobile.png';
 import PhotoDesktop from '/public/images/Photo/PhotoDesktop.png';
@@ -21,7 +20,7 @@ export const workData = [
     roles: ['Full Stack Developer', 'UI Designer'],
     images: { desktop: PhotoDesktop.src, mobile: PhotoMobile.src },
     links: {
-      site: null,
+      site: 'https://photos.meda.world/',
       github: 'https://github.com/medaworld/meda-photo-gallery',
     },
   },

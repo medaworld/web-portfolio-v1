@@ -95,7 +95,7 @@ export const TitleText = styled.div`
   animation: moveUp 2s normal;
   @keyframes moveUp {
     0% {
-      transform: translateY(900px);
+      transform: translateY(700px);
       opacity: 0;
     }
     40% {

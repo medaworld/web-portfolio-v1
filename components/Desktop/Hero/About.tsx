@@ -55,7 +55,7 @@ function About() {
           ABOUT
         </AboutTitle>
         <AboutText>
-          Front-end web developer enthusiastic in building exceptional user
+          Front-end software engineer enthusiastic in building exceptional user
           experiences. UCLA alumni with a passion in design, technology,
           photography and music.
         </AboutText>

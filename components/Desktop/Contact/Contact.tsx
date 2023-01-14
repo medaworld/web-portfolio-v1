@@ -59,7 +59,7 @@ function DesktopContact() {
           hoverColor={'#3EA0ED'}
         />
         <ContactIcon
-          url={'https://www.linkedin.com/in/brian-suruki'}
+          url={'https://www.linkedin.com/in/briansuruki'}
           imgUrl={linkedInIcon.src}
           alt={'LinkedIn'}
           hoverColor={'#0A67C3'}

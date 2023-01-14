@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import {
   Block,
   TitleContainer,
@@ -9,7 +8,7 @@ function Title() {
   return (
     <TitleContainer>
       <Block />
-      <TitleText>Web Developer</TitleText>
+      <TitleText>Front-End Software Engineer</TitleText>
     </TitleContainer>
   );
 }

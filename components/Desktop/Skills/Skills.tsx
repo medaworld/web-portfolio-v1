@@ -17,7 +17,7 @@ function DesktopSkills() {
   const [showTools, setShowTools] = useState(false);
   const [showDesign, setShowDesign] = useState(false);
 
-  const languages = ['JavaScript', 'TypeScript', 'HTML', 'CSS', 'SQL'];
+  const languages = ['JavaScript', 'TypeScript', 'HTML', 'CSS'];
   const frameworks = ['React & Redux', 'Next.js', 'Node.js', 'Express'];
   const tools = ['MongoDB', 'Git & Github', 'Postman', 'Firebase'];
   const design = ['Affinity Designer', 'Affinity Publisher', 'Affinity Photo'];

@@ -6,7 +6,7 @@ function Intro() {
   return (
     <IntroContainer>
       <Name />
-      <Title />
+      {/* <Title /> */}
     </IntroContainer>
   );
 }
