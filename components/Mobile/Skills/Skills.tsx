@@ -31,32 +31,30 @@ function MobileSkills() {
           documentElement.clientHeight) *
         100;
 
-      if (scroll > 80) {
+      if (scroll > 50) {
         setShowTitle(true);
       } else {
         setShowTitle(false);
       }
-      console.log(scroll);
-
-      if (scroll > 95) {
+      if (scroll > 65) {
         setShowLanguages(true);
       } else {
         setShowLanguages(false);
       }
 
-      if (scroll > 105) {
+      if (scroll > 75) {
         setShowFrameworks(true);
       } else {
         setShowFrameworks(false);
       }
 
-      if (scroll > 115) {
+      if (scroll > 85) {
         setShowTools(true);
       } else {
         setShowTools(false);
       }
 
-      if (scroll > 125) {
+      if (scroll > 95) {
         setShowDesign(true);
       } else {
         setShowDesign(false);

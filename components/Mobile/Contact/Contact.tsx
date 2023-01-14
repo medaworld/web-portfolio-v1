@@ -41,7 +41,7 @@ function MobileContact() {
     <Container>
       <ContactTitle
         showTitle={showTitle}
-        style={{ transform: 'translateX(' + (130 - scrollPercent) + '%)' }}
+        style={{ transform: 'translateX(' + (72 - scrollPercent) + '%)' }}
       >
         CONTACT
       </ContactTitle>

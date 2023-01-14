@@ -8,7 +8,6 @@ export const Container = styled.div`
   flex-flow: row nowrap;
   overflow-x: clip;
   flex-direction: column;
-  background-color: ${(p) => p.theme.colors.primary};
 `;
 
 export const WorkTitle = styled.div<WorkTitleProps>`
@@ -40,29 +39,23 @@ export const WorkTitle = styled.div<WorkTitleProps>`
   }
 `;
 
-export const BackgroundBlock = styled.div<{
-  bgChange: { in: boolean; out: boolean };
-}>`
-  position: fixed;
-  bottom: ${(p) =>
-    p.bgChange.in && !p.bgChange.out
-      ? '0%'
-      : p.bgChange.in && p.bgChange.out
-      ? '100vh'
-      : '-100vh'};
-  /* bottom: ${(p) => (p.bgChange ? '0' : '-100vh')}; */
+export const BackgroundSpacer = styled.div<{ slides: number }>`
+  height: ${(p) => (p.slides - 0.5) * 100 + 'vh'};
   background-color: ${(p) => p.theme.colors.primary};
+`;
+
+export const ContentContainer = styled.div`
+  position: fixed;
+  height: 90vh;
   width: 100vw;
-  height: 100vh;
-  transition: all 0.5s ease-out;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const TextContentContainer = styled.div`
-  position: fixed;
-  width: 45vw;
-  top: 0;
-  left: 0;
-  height: 100vh;
+  height: 60vh;
   padding-left: 5%;
   display: flex;
   flex-direction: column;
@@ -155,84 +148,63 @@ export const ProjectRoles = styled.span`
   }
 `;
 
-export const Slide = styled.div`
-  height: 100vh;
-  width: 100vw;
-`;
-
 export const ImageContentContainer = styled.div`
-  height: 100vh;
-  width: 50%;
+  position: relative;
   display: flex;
-  position: relative;
-`;
-
-export const ImageContainer = styled.div<{ slidePercent: number }>`
-  width: 100%;
-  height: 818px;
-  transition: all 0.5s ease-out;
-  position: relative;
-  transform: ${(p) =>
-    p.slidePercent > 5 ? 'translateY(-50%)' : 'translateY(0)'};
-  filter: brightness(110%);
-  @media (${device.desktop}) {
-    height: 870px;
-  }
+  height: 40vh;
+  justify-content: center;
+  align-items: end;
 `;
 
 export const DesktopImage = styled.img`
   position: absolute;
   width: 1024px;
-  object-fit: contain;
-  margin-bottom: -10%;
-  margin-left: -20%;
-  transition: all 0.5s ease-out;
 
   @media (${device.smallest}) {
-    width: 320px;
+    width: 300px;
   }
   @media (${device.mobileS}) {
-    width: 375px;
+    width: 325px;
   }
   @media (${device.mobileM}) {
-    width: 700px;
+    width: 350px;
   }
   @media (${device.mobileL}) {
-    width: 900px;
+    width: 400px;
   }
 `;
 
 export const MobileImage = styled.img`
   position: absolute;
-  width: 384px;
-  margin-left: 100%;
-  margin-top: 40vh;
+  width: 34px;
   transition: all 0.7s ease-out;
+  margin-left: 25%;
 
   @media (${device.smallest}) {
-    width: 200px;
+    width: 70px;
   }
   @media (${device.mobileS}) {
-    width: 205px;
+    width: 75px;
   }
   @media (${device.mobileM}) {
-    width: 250px;
+    width: 80px;
   }
   @media (${device.mobileL}) {
-    width: 280px;
+    width: 100px;
   }
 `;
 
-export const ImageNavWindow = styled.div`
+export const ImageNavWindow = styled.div<{ show: boolean }>`
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 80%;
   display: flex;
-  opacity: 0;
+  visibility: ${(p) => (p.show ? 'visible' : 'hidden')};
+  opacity: ${(p) => (p.show ? '100%' : '0')};
   justify-content: center;
   align-items: center;
-  transition: all 0.7s ease-out;
-  z-index: 1;
+  transition: all 0.3s ease-out;
+  z-index: 10;
 `;
 
 export const VisitButton = styled.div`
@@ -247,4 +219,20 @@ export const VisitButton = styled.div`
     cursor: pointer;
     transform: scale(1.1);
   }
+`;
+
+export const BackgroundBlock = styled.div<{
+  bgChange: { in: boolean; out: boolean };
+}>`
+  position: fixed;
+  bottom: ${(p) =>
+    p.bgChange.in && !p.bgChange.out
+      ? '0%'
+      : p.bgChange.in && p.bgChange.out
+      ? '100vh'
+      : '-100vh'};
+  background-color: ${(p) => p.theme.colors.primary};
+  width: 100vw;
+  height: 100vh;
+  transition: bottom 0.5s ease-out;
 `;

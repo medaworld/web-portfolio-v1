@@ -1,3 +1,4 @@
+import { WorkData } from './types';
 import BlockchainDesktop from '/public/images/Blockchain/BlockchainDesktop.png';
 import BlockchainMobile from '/public/images/Blockchain/BlockchainMobile.png';
 import PhotoDesktop from '/public/images/Photo/PhotoDesktop.png';
