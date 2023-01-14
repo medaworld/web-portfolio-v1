@@ -21,7 +21,6 @@ function MobileContact() {
         ((documentElement.scrollTop - documentElement.clientHeight * 3.5) /
           documentElement.clientHeight) *
         100;
-      console.log(scroll);
 
       if (scroll > 100) {
         setShowTitle(true);

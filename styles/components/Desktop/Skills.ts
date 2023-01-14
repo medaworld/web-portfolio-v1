@@ -49,12 +49,13 @@ export const SkillsContainer = styled.div`
 export const Languages = styled.ul<{ showLanguages: boolean }>`
   position: absolute;
   top: 15vh;
-  left: ${(p) => (p.showLanguages ? '10vw' : '-40vw')};
+  left: 10vw;
   font-size: 30px;
   padding: 0 5%;
   list-style: none;
   word-wrap: break-word;
-  transition: left 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transform: ${(p) => (p.showLanguages ? '' : 'translateX(-50vw)')};
 
   @media (${device.laptopL}) {
     font-size: 36px;
@@ -67,13 +68,14 @@ export const Languages = styled.ul<{ showLanguages: boolean }>`
 export const Frameworks = styled.ul<{ showFrameworks: boolean }>`
   position: absolute;
   top: 32.5vh;
-  right: ${(p) => (p.showFrameworks ? '10vw' : '-40vw')};
+  right: 10vw;
   font-size: 30px;
   text-align: right;
   padding: 0 5%;
   list-style: none;
   word-wrap: break-word;
-  transition: right 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transform: ${(p) => (p.showFrameworks ? '' : 'translateX(50vw)')};
 
   @media (${device.laptopL}) {
     font-size: 36px;
@@ -86,12 +88,13 @@ export const Frameworks = styled.ul<{ showFrameworks: boolean }>`
 export const Tools = styled.ul<{ showTools: boolean }>`
   position: absolute;
   top: 50vh;
-  left: ${(p) => (p.showTools ? '10vw' : '-40vw')};
+  left: 10vw;
   font-size: 30px;
   padding: 0 5%;
   list-style: none;
   word-wrap: break-word;
-  transition: left 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transform: ${(p) => (p.showTools ? '' : 'translateX(-50vw)')};
 
   @media (${device.laptopL}) {
     font-size: 36px;
@@ -104,13 +107,14 @@ export const Tools = styled.ul<{ showTools: boolean }>`
 export const Design = styled.ul<{ showDesign: boolean }>`
   position: absolute;
   top: 67.5vh;
-  right: ${(p) => (p.showDesign ? '10vw' : '-40vw')};
+  right: 10vw;
   font-size: 30px;
   text-align: right;
   padding: 0 5%;
   list-style: none;
   word-wrap: break-word;
-  transition: right 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transform: ${(p) => (p.showDesign ? '' : 'translateX(50vw)')};
 
   @media (${device.laptopL}) {
     font-size: 36px;

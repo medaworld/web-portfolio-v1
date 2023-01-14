@@ -16,15 +16,16 @@ export const WorkTitle = styled.div<WorkTitleProps>`
   font: 120px Cabin;
   line-height: 120px;
   color: ${(p) => p.theme.colors.success};
-  top: ${(p) =>
-    p.showTitle.in && !p.showTitle.out
-      ? '10%'
-      : p.showTitle.in && p.showTitle.out
-      ? '-40%'
-      : '110%'};
+  top: 5%;
   opacity: 40%;
   right: 5%;
-  transition: all 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transform: ${(p) =>
+    p.showTitle.in && !p.showTitle.out
+      ? 'translateY(0)'
+      : p.showTitle.in && p.showTitle.out
+      ? 'translateY(-40vh)'
+      : 'translateY(110vh)'};
 
   @media (${device.laptopL}) {
     font-size: 144px;

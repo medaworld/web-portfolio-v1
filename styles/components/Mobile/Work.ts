@@ -203,7 +203,7 @@ export const ImageNavWindow = styled.div<{ show: boolean }>`
   opacity: ${(p) => (p.show ? '100%' : '0')};
   justify-content: center;
   align-items: center;
-  transition: all 0.3s ease-out;
+  transition: all 0.1s ease-out;
   z-index: 10;
 `;
 
