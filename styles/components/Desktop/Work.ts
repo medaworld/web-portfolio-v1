@@ -151,53 +151,62 @@ export const ImageContainer = styled.div<{ slidePercent: number }>`
 
   :hover {
     opacity: 70%;
-
     div:first-child {
       opacity: 100%;
     }
-    img:nth-child(2) {
-      margin-left: -10%;
-    }
-    img:last-child {
-      margin-left: 70%;
+  }
+
+  @supports (overflow: clip) {
+    :hover {
+      img:nth-child(2) {
+        margin-left: -10%;
+      }
+      img:last-child {
+        margin-left: 70%;
+      }
     }
   }
 `;
 
 export const DesktopImage = styled.img`
   position: absolute;
-  width: 1024px;
-  object-fit: contain;
   margin-bottom: -10%;
   transition: all 0.5s ease-out;
+  width: 100%;
 
-  @media (${device.laptopL}) {
-    width: 1228px;
-  }
-  @media (${device.desktop}) {
-    width: 1440px;
+  @supports (overflow: clip) {
+    width: 1024px;
+    @media (${device.laptopL}) {
+      width: 1228px;
+    }
+    @media (${device.desktop}) {
+      width: 1440px;
+    }
   }
 `;
 
 export const MobileImage = styled.img`
   position: absolute;
-  width: 384px;
   margin-left: 50%;
   margin-top: 40vh;
   transition: all 0.7s ease-out;
+  width: 200px;
 
-  @media (${device.laptopL}) {
-    width: 460px;
-  }
-  @media (${device.desktop}) {
-    width: 512px;
+  @supports (overflow: clip) {
+    width: 384px;
+    @media (${device.laptopL}) {
+      width: 460px;
+    }
+    @media (${device.desktop}) {
+      width: 512px;
+    }
   }
 `;
 
 export const ImageNavWindow = styled.div`
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 50%;
   display: flex;
   opacity: 0;
   justify-content: center;

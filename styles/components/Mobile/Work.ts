@@ -23,7 +23,7 @@ export const WorkTitle = styled.div<WorkTitleProps>`
       : '110%'};
   opacity: 40%;
   right: 5%;
-  transition: all 0.5s ease-out;
+  transition: all 0.3s ease-out;
 
   @media (${device.smallest}) {
     font-size: 86px;
@@ -66,7 +66,7 @@ export const TextContentContainer = styled.div`
 
 export const ProjectText = styled.div<{ fontSize?: number }>`
   font: ${(p) => p.fontSize + 'px Cabin'};
-  transition: all 0.4s ease-out;
+  transition: all 0.5s ease-out;
 
   span {
     overflow: hidden;
@@ -159,7 +159,7 @@ export const ImageContentContainer = styled.div`
 export const DesktopImage = styled.img`
   position: absolute;
   width: 1024px;
-  animation: fade 0.5s ease-out;
+  animation: fade 1s ease-out;
 
   @keyframes fade {
     from {
@@ -193,7 +193,7 @@ export const MobileImage = styled.img`
   transition: all 0.7s ease-out;
   margin-left: 25%;
 
-  animation: fade 0.5s ease-out;
+  animation: fade 1s ease-out;
 
   @keyframes fade {
     from {
@@ -261,5 +261,5 @@ export const BackgroundBlock = styled.div<{
   background-color: ${(p) => p.theme.colors.primary};
   width: 100vw;
   height: 100vh;
-  transition: bottom 0.5s ease-out;
+  transition: bottom 0.3s ease-out;
 `;
