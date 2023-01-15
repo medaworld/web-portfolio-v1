@@ -100,33 +100,33 @@ export const ProjectText = styled.div<{ fontSize?: number }>`
 `;
 
 export const ProjectTitle = styled.span`
-  font: 50px Cabin;
+  font: 45px Cabin;
 
   @media (${device.laptopL}) {
-    font-size: 60px;
+    font-size: 55px;
   }
   @media (${device.desktop}) {
-    font-size: 80px;
+    font-size: 75px;
   }
 `;
 
 export const ProjectDesc = styled.span`
-  font: 30px Cabin;
+  font: 25px Cabin;
   @media (${device.laptopL}) {
-    font-size: 36px;
+    font-size: 31px;
   }
   @media (${device.desktop}) {
-    font-size: 48px;
+    font-size: 43px;
   }
 `;
 
 export const ProjectRoles = styled.span`
-  font: 25px Cabin;
+  font: 20px Cabin;
   @media (${device.laptopL}) {
-    font-size: 30px;
+    font-size: 25px;
   }
   @media (${device.desktop}) {
-    font-size: 40px;
+    font-size: 35px;
   }
 `;
 
@@ -196,15 +196,15 @@ export const MobileImage = styled.img`
   margin-left: 50%;
   margin-top: 40vh;
   transition: all 0.7s ease-out;
-  width: 200px;
+  width: 300px;
 
   @supports (overflow: clip) {
-    width: 384px;
+    width: 324px;
     @media (${device.laptopL}) {
-      width: 460px;
+      width: 400px;
     }
     @media (${device.desktop}) {
-      width: 512px;
+      width: 452px;
     }
   }
 `;

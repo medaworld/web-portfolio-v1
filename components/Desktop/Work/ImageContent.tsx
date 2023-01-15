@@ -55,7 +55,7 @@ function ImageContent({
           <MobileImage
             src={data.images.mobile}
             style={{
-              transform: 'translateY(' + -slidePercent + 'vh)',
+              transform: 'translateY(' + -slidePercent * 0.8 + 'vh)',
             }}
           />
         </ImageContainer>
