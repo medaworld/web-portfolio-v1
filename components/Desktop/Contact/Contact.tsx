@@ -3,6 +3,7 @@ import {
   ContactIcons,
   ContactTitle,
   Container,
+  ResumeButton,
 } from '../../../styles/components/Desktop/Contact';
 import ContactIcon from './ContactIcon';
 import githubIcon from '/public/icons/GithubIcon.png';
@@ -71,6 +72,9 @@ function DesktopContact() {
           hoverColor={'#1D9BF0'}
         />
       </ContactIcons>
+      <ResumeButton href="/pdfs/resume.pdf" target="_blank">
+        Resume
+      </ResumeButton>
     </Container>
   );
 }

@@ -69,3 +69,19 @@ export const Logo = styled.div<{ hoverColor: string; url: string }>`
     background-color: ${(p) => p.hoverColor};
   }
 `;
+
+export const ResumeButton = styled.a`
+  position: absolute;
+  border: 1px solid ${(p) => p.theme.colors.primary};
+  border-radius: 10px;
+  margin: 20px;
+  padding: 10px 15px;
+  bottom: 0;
+  left: 0;
+  transition: all 0.3s ease;
+
+  :hover {
+    cursor: pointer;
+    background-color: #f0f0f0;
+  }
+`;
