@@ -8,7 +8,7 @@ import ContactIcon from './ContactIcon';
 import githubIcon from '/public/icons/GithubIcon.png';
 import emailIcon from '/public/icons/MailIcon.png';
 import linkedInIcon from '/public/icons/LinkedInIcon.png';
-import twitterIcon from '/public/icons/TwitterIcon.png';
+// import twitterIcon from '/public/icons/TwitterIcon.png';
 
 function MobileContact() {
   const [showTitle, setShowTitle] = useState(false);
@@ -57,12 +57,12 @@ function MobileContact() {
           alt={'LinkedIn'}
           hoverColor={'#0A67C3'}
         />
-        <ContactIcon
+        {/* <ContactIcon
           url={'https://twitter.com/meda_world'}
           imgUrl={twitterIcon.src}
           alt={'Twitter'}
           hoverColor={'#1D9BF0'}
-        />
+        /> */}
       </ContactIcons>
     </Container>
   );
